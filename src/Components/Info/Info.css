@@ -59,17 +59,17 @@
 }
 .mapsDiv {
   height: 10.875rem;
-  width: 21.5rem;
+  width: 21.7rem;
   background-color: #f9f9f9;
   border: 2px solid rgb(241, 227, 227);
   border-radius: 5px;
-  margin-left: 1.15rem;
-  margin-right: 1.25rem;
+  margin-left: 0.87rem;
+  margin-right: 1.05rem;
 }
 .footerLinks {
-  margin-left: 107px;
+  margin-left: 104px;
   margin-right: 107px;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 .footerLinks > a > img {
   width: 27px;

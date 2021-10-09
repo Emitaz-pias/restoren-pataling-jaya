@@ -2,7 +2,7 @@
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  height: 880px;
+  height: 1080px;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -38,7 +38,7 @@
 .shareBtn {
   margin-top: 1.2rem;
   margin-right: 1.2rem;
-  margin-left: 4rem;
+  margin-left: 2.95rem;
 }
 .shareBtn:hover {
   cursor: pointer;
