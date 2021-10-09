@@ -1,15 +1,15 @@
 import React from "react";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+// import { GoogleMap, LoadScript } from "@react-google-maps/api";
 
-const containerStyle = {
-  width: "400px",
-  height: "400px",
-};
+// const containerStyle = {
+//   width: "400px",
+//   height: "400px",
+// };
 
-const center = {
-  lat: 3.1251,
-  lng: 101.63406,
-};
+// const center = {
+//   lat: 3.1251,
+//   lng: 101.63406,
+// };
 
 const Map = () => {
   return (

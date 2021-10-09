@@ -10,7 +10,8 @@ import "./Info.css";
 import faceBookLogo from "../../images/facebook.png";
 import instragramLogo from "../../images/instagram.png";
 import whatsappLogo from "../../images/whatsapp.png";
-import Map from "../Map/Map";
+
+// import Map from "../Map/Map";
 
 const Info = () => {
   return (
