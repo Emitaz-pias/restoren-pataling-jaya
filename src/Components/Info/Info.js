@@ -16,11 +16,12 @@ import whatsappLogo from "../../images/whatsapp.png";
 const Info = () => {
   return (
     <section className="infoSection">
-      <div className="iconsDiv mt-5">
+      <div className="iconsDiv">
         <div className="d-flex align-items-center">
-          <p className="iconsArea">
+          <p className="iconsArea iconShop ">
             {" "}
             <FontAwesomeIcon
+              id="iconShop"
               className="icon"
               color="white"
               icon={faShoppingBag}
@@ -29,7 +30,7 @@ const Info = () => {
           <p className="textAreaResName">SR Bistro -Petaling Jaya</p>
         </div>
         <div className="d-flex  align-items-center">
-          <p className="iconsArea">
+          <p className="iconsArea iconPhone">
             <FontAwesomeIcon
               className="icon"
               color="white"
@@ -39,7 +40,7 @@ const Info = () => {
           <p className="textAreaPhone"> +6016-677 5401</p>
         </div>
         <div className="d-flex align-items-center ">
-          <p className="iconsArea">
+          <p className="iconsArea iconHistory">
             <FontAwesomeIcon
               className="icon"
               color="white"
@@ -52,7 +53,7 @@ const Info = () => {
           </p>
         </div>
         <div className="d-flex align-items-center">
-          <p className="iconsArea">
+          <p className="iconsArea iconL">
             <FontAwesomeIcon
               className="icon"
               color="white"
@@ -66,7 +67,9 @@ const Info = () => {
           </p>
         </div>
       </div>
-      <div className="mapsDiv"> </div>
+      <div className="mapsDiv text-center">
+        <h5>here will be our map</h5>{" "}
+      </div>
       <div className="footerLinks d-flex">
         <a href="/">
           <img src={whatsappLogo} alt="whatsapp loogo" />
