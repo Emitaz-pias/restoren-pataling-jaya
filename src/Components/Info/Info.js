@@ -61,9 +61,7 @@ const Info = () => {
             />
           </p>
           <p className="textAreaLocation">
-            No.58, Blok G, Jalan <br />
-            17/1A, Seksyen17,
-            <br /> 46400 Petaling Jaya, Selangor
+            No.58, Blok G, Jalan 17/1A, Seksyen17, 46400 Petaling Jaya, Selangor
           </p>
         </div>
       </div>
