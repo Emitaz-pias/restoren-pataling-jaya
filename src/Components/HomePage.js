@@ -107,7 +107,10 @@ const HomePage = () => {
                 className="customIconI"
                 icon={faInfoCircle}
               ></FontAwesomeIcon>
-              <h5 style={{ marginLeft: "0.62rem" }} className="mt-1">
+              <h5
+                style={{ marginLeft: "0.62rem", fontSize: "1.1rem" }}
+                className="mt-1"
+              >
                 info
               </h5>
             </div>
