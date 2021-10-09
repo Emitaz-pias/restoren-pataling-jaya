@@ -68,7 +68,7 @@ const Info = () => {
       <div className="mapsDiv text-center">
         <h5>here will be our map</h5>{" "}
       </div>
-      <div className="footerLinks d-flex">
+      <div className="footerLinks d-flex justify-content-center ">
         <a href="/">
           <img src={whatsappLogo} alt="whatsapp loogo" />
         </a>
