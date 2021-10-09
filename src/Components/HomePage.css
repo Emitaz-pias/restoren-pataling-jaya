@@ -5,22 +5,21 @@
 }
 .bannerImg {
   width: 100%;
-  height: 9.813rem;
 }
 
 .logoDiv img {
   width: 5rem;
   height: 5rem;
   position: relative;
-  top: -5.625rem;
-  left: 2.188rem;
+  top: -7.99rem;
+  left: 1.188rem;
   border-radius: 0.625rem;
   z-index: 1;
 }
 .whiteBgMainDiv {
   position: relative;
   background-color: white;
-  top: -7.5rem;
+  top: -9.3rem;
   border-radius: 3em;
   width: 100%;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./HomePage.css";
 import srLogo from "../images/244087189_592638525096104_656116708744791639_n (1).jpg";
-import bannerPic from "../images/243989833_907718653499314_1268376659528686661_n.jpg";
+import homeBanner from "../images/homeBanner.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -23,7 +23,7 @@ const HomePage = () => {
   return (
     <div className="fullPage">
       <div className="homeBg">
-        <img className="bannerImg" src={bannerPic} alt="" />
+        <img className="bannerImg" src={homeBanner} alt="" />
       </div>
       {/* white big div section */}
       <section className="whiteDiv">
