@@ -64,11 +64,11 @@ const HomePage = () => {
             >
               <span>
                 {" "}
-                <FontAwesomeIcon size="2x" icon={faBars}></FontAwesomeIcon>
+                <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
               </span>
-              <h5 style={{ marginLeft: "0.62rem" }} className="mt-2">
+              <h6 style={{ marginLeft: "0.62rem" }} className="mt-2">
                 Menu
-              </h5>
+              </h6>
             </div>
             {/* reviewdiv */}
             <div
@@ -81,12 +81,11 @@ const HomePage = () => {
                 {" "}
                 <FontAwesomeIcon
                   color="primary "
-                  size="2x"
                   icon={faStar}
                 ></FontAwesomeIcon>
               </span>
               <h5
-                style={{ marginTop: "0.62rem", marginLeft: "0.62rem" }}
+                style={{ marginTop: "0.52rem", marginLeft: "0.62rem" }}
                 className=""
               >
                 Review
@@ -100,8 +99,8 @@ const HomePage = () => {
                 selectedDiv === "infoDiv" && "active"
               } infoDiv box d-flex  align-items-center`}
             >
-              <FontAwesomeIcon size="2x" icon={faInfoCircle}></FontAwesomeIcon>
-              <h5 style={{ marginLeft: "0.4rem" }} className="mt-1">
+              <FontAwesomeIcon icon={faInfoCircle}></FontAwesomeIcon>
+              <h5 style={{ marginLeft: "0.62rem" }} className="mt-1">
                 info
               </h5>
             </div>
