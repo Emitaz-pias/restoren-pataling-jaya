@@ -26,7 +26,7 @@ const HomePage = () => {
       </div>
       {/* white big div section */}
       <section className="whiteDiv">
-        {/* logo div */}
+        {/* logo div here */}
         <div className="logoDiv ms-3">
           <img src={srLogo} alt="sr logo" />
         </div>
