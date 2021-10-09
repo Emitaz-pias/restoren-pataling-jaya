@@ -2,6 +2,8 @@
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  height: 845px;
+  overflow-y: hidden;
 }
 .bannerImg {
   width: 100%;
