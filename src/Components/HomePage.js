@@ -111,7 +111,7 @@ const HomePage = () => {
                 style={{ marginLeft: "0.62rem", fontSize: "1.1rem" }}
                 className="mt-1"
               >
-                info
+                Info
               </h5>
             </div>
           </div>
