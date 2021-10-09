@@ -27,7 +27,7 @@ const Info = () => {
               icon={faShoppingBag}
             ></FontAwesomeIcon>
           </p>
-          <p className="textAreaResName">SR Bistro -Petaling Jaya</p>
+          <p className="textAreaResName">SR Bistro</p>
         </div>
         <div className="d-flex  align-items-center">
           <p className="iconsArea iconPhone">
@@ -37,7 +37,7 @@ const Info = () => {
               icon={faPhoneAlt}
             ></FontAwesomeIcon>
           </p>
-          <p className="textAreaPhone"> +6016-677 5401</p>
+          <p className="textAreaPhone"> +60182698144</p>
         </div>
         <div className="d-flex align-items-center ">
           <p className="iconsArea iconHistory">
@@ -49,7 +49,7 @@ const Info = () => {
           </p>
           <p className="textAreaOpen">
             <strong>Operating Time :</strong>
-            11:00 AM ~ 11:00 PM
+            8:00 AM ~ 10:00 PM
           </p>
         </div>
         <div className="d-flex align-items-center">
@@ -61,9 +61,9 @@ const Info = () => {
             />
           </p>
           <p className="textAreaLocation">
-            No. 01-33A, Glomac Centro, Jalan <br /> Teratai PJU 6A, Mukim Pekan
-            Kayu Ara,
-            <br /> 47400 Petaling Jaya, Selangor
+            No.58, Blok G, Jalan <br />
+            17/1A, Seksyen17,
+            <br /> 46400 Petaling Jaya, Selangor
           </p>
         </div>
       </div>
