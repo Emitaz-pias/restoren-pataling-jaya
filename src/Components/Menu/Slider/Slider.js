@@ -14,7 +14,7 @@ const OurSlider = () => {
   };
   return (
     <div>
-      <h4 className="hotDealTitile">Hot deals </h4>
+      <h4 className="hotDealTitile">Promotions</h4>
       <div className="">
         <div className="sliderSection">
           <div
@@ -56,7 +56,7 @@ const OurSlider = () => {
                     src={slide1}
                     alt="First slide"
                   />
-                  <div
+                  {/* <div
                     className="d-flex justify-content-between"
                     style={{
                       color: "black",
@@ -66,7 +66,7 @@ const OurSlider = () => {
                   >
                     <p>Nasi Kukus Ayam Berempah</p>
                     <small className="text-secondary">RM5.00</small>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div class="carousel-item">
@@ -80,7 +80,7 @@ const OurSlider = () => {
                     src={slide2}
                     alt="First slide"
                   />
-                  <div
+                  {/* <div
                     className="d-flex  justify-content-between "
                     style={{ color: "black", marginTop: "0.625rem" }}
                   >
@@ -88,7 +88,7 @@ const OurSlider = () => {
                       Nasi Kukus Ayam Goreng Kunyit
                     </p>
                     <small className="text-secondary">RM6.00</small>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div class="carousel-item">
@@ -105,7 +105,7 @@ const OurSlider = () => {
                     src={slide3}
                     alt="First slide"
                   />
-                  <div
+                  {/* <div
                     className="d-flex  justify-content-between"
                     style={{ color: "black", marginTop: "0.625rem" }}
                   >
@@ -113,7 +113,7 @@ const OurSlider = () => {
                       Mee Goreng Mamak
                     </p>
                     <small className="text-secondary">RM6.00</small>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
