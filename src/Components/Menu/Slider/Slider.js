@@ -39,9 +39,9 @@ const OurSlider = () => {
             </ol>
             <div
               style={{
-                marginLeft: "2.9%",
+                marginLeft: "2.7%",
                 marginRight: "2%",
-                width: "92%",
+                width: "93%",
               }}
               class="carousel-inner"
             >
