@@ -3,7 +3,7 @@ import "./Slider.css";
 import slide1 from "../../../images/pic1.jpg";
 import slide2 from "../../../images/pic2.jpg";
 import slide3 from "../../../images/pic3.jpg";
-import slider4 from "../../../images/slider4.jpg";
+import slider1 from "../../../images/slider4.jpg";
 
 const OurSlider = () => {
   const settings = {
@@ -15,7 +15,7 @@ const OurSlider = () => {
   };
   return (
     <div>
-      <h4 className="hotDealTitile">Promotions</h4>
+      {/* <h4 className="hotDealTitile">Promotions</h4> */}
       <div className="">
         <div className="sliderSection">
           <div
@@ -58,7 +58,7 @@ const OurSlider = () => {
                   <img
                     style={{ borderRadius: "10px" }}
                     className="sliderSectionImg w-100"
-                    src={slide1}
+                    src={slider1}
                     alt="First slide"
                   />
                   {/* <div
@@ -85,7 +85,7 @@ const OurSlider = () => {
                   <img
                     style={{ borderRadius: "10px" }}
                     className="sliderSectionImg w-100"
-                    src={slider4}
+                    src={slider1}
                     alt="First slide"
                   />
                   {/* <div
@@ -107,7 +107,7 @@ const OurSlider = () => {
                   <img
                     style={{ borderRadius: "10px" }}
                     className="sliderSectionImg w-100"
-                    src={slide2}
+                    src={slider1}
                     alt="First slide"
                   />
                   {/* <div
@@ -132,7 +132,7 @@ const OurSlider = () => {
                   <img
                     style={{ borderRadius: "10px" }}
                     className="sliderSectionImg w-100"
-                    src={slide3}
+                    src={slider1}
                     alt="First slide"
                   />
                   {/* <div
