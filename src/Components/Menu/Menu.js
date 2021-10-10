@@ -1,6 +1,6 @@
 import React from "react";
 import "./Menu.css";
-import Slider from "../Menu/Slider/Slider";
+import Slider from "./Slider/Slider";
 const Menu = () => {
   //Nasi Kukus Ayam Berempah
 

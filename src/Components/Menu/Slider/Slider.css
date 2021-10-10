@@ -5,11 +5,9 @@
   margin-bottom: 1.18rem;
   font-weight: 600;
 }
-.sliderSection {
-  background-color: aqua;
-  border-radius: 10px;
-  width: 92%;
+.sliderSectionImg {
   height: 10.938rem;
-  margin-left: 3%;
-  margin-right: 2%;
+}
+.menuDetails {
+  margin-top: 0.625rem;
 }
