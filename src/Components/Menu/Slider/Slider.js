@@ -3,6 +3,7 @@ import "./Slider.css";
 import slide1 from "../../../images/pic1.jpg";
 import slide2 from "../../../images/pic2.jpg";
 import slide3 from "../../../images/pic3.jpg";
+import slider4 from "../../../images/slider4.jpg";
 
 const OurSlider = () => {
   const settings = {
@@ -36,6 +37,10 @@ const OurSlider = () => {
                 data-target="#carouselExampleIndicators"
                 data-slide-to="2"
               ></li>
+              <li
+                data-target="#carouselExampleIndicators"
+                data-slide-to="3"
+              ></li>
             </ol>
             <div
               style={{
@@ -66,6 +71,31 @@ const OurSlider = () => {
                   >
                     <p>Nasi Kukus Ayam Berempah</p>
                     <small className="text-secondary">RM5.00</small>
+                  </div> */}
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div
+                  className="d-block"
+                  style={{
+                    backgroundColor: "white",
+                    height: "20rem",
+                  }}
+                >
+                  <img
+                    style={{ borderRadius: "10px" }}
+                    className="sliderSectionImg w-100"
+                    src={slider4}
+                    alt="First slide"
+                  />
+                  {/* <div
+                    className="d-flex  justify-content-between"
+                    style={{ color: "black", marginTop: "0.625rem" }}
+                  >
+                    <p style={{ lineHeight: "19.2px", fontSize: "15px" }}>
+                      Mee Goreng Mamak
+                    </p>
+                    <small className="text-secondary">RM6.00</small>
                   </div> */}
                 </div>
               </div>
@@ -122,7 +152,7 @@ const OurSlider = () => {
               href="#carouselExampleIndicators"
               role="button"
               data-slide="prev"
-              style={{ position: "absolute", top: "-8.5rem" }}
+              style={{ position: "absolute", top: "-8.2rem" }}
             >
               <span
                 class="carousel-control-prev-icon"
@@ -135,7 +165,7 @@ const OurSlider = () => {
               href="#carouselExampleIndicators"
               role="button"
               data-slide="next"
-              style={{ position: "absolute", top: "-8.5rem" }}
+              style={{ position: "absolute", top: "-8.2rem" }}
             >
               <span
                 class="carousel-control-next-icon"
