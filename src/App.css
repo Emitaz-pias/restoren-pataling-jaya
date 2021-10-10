@@ -3,12 +3,11 @@
   padding: 0px;
 }
 ::-webkit-scrollbar {
-  width: 1em;
+  width: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#00aff0, transparent);
-  border-radius: 3px;
+  display: none;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(#00affa, #ff00ff);
+  display: none;
 }

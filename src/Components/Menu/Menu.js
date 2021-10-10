@@ -1,10 +1,18 @@
 import React from "react";
 import "./Menu.css";
+import Slider from "../Menu/Slider/Slider";
 const Menu = () => {
+  //Nasi Kukus Ayam Berempah
+
+  // RM5.00
+
+  // Nasi Kukus Ayam Goreng Kunyit
+  //RM6.00
+  // Mee Goreng Mamak
+  // RM6.00
   return (
     <section>
-      {" "}
-      <h1>our favorite menu here</h1>
+      <Slider></Slider>
     </section>
   );
 };

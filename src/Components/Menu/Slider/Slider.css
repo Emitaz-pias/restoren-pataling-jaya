@@ -1,0 +1,15 @@
+.hotDealTitile {
+  font-family: Lato;
+  margin-left: 3%;
+  margin-top: 1.3rem;
+  margin-bottom: 1.18rem;
+  font-weight: 600;
+}
+.sliderSection {
+  background-color: aqua;
+  border-radius: 10px;
+  width: 92%;
+  height: 10.938rem;
+  margin-left: 3%;
+  margin-right: 2%;
+}

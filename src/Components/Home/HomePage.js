@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./HomePage.css";
-import srLogo from "../images/244087189_592638525096104_656116708744791639_n (1).jpg";
-import homeBanner from "../images/homeBanner.jpg";
+import srLogo from "../../images/244087189_592638525096104_656116708744791639_n (1).jpg";
+import homeBanner from "../../images/homeBanner.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -9,9 +9,9 @@ import {
   faShareAlt,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import Menu from "./Menu/Menu";
-import Info from "./Info/Info";
-import Review from "./Review/Review";
+import Menu from "../Menu/Menu";
+import Info from "../Info/Info";
+import Review from "../Review/Review";
 
 const HomePage = () => {
   const [selected, setSelected] = useState(false);

@@ -1,0 +1,18 @@
+.fullContainer {
+  text-align: center;
+  color: white;
+  background-image: url("../../images/loginbg.jpg");
+  height: 890px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.loginImage {
+  width: 100%;
+}
+
+.instruction {
+  margin-left: 27%;
+  font-family: "Lato";
+  font-size: 1rem;
+  width: 13.438rem;
+}
