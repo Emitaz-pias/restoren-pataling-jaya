@@ -2,7 +2,7 @@
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  height: 880px;
+  height: auto;
   overflow-y: hidden;
   overflow-x: hidden;
 }

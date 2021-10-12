@@ -10,6 +10,7 @@
 }
 .sliderSectionImg {
   height: 12.938rem;
+  border-radius: 10px;
 }
 .menuDetails {
   margin-top: 0.625rem;
