@@ -8,7 +8,7 @@ import { Carousel } from "react-bootstrap";
 
 const OurSlider = () => {
   return (
-    <div style={{ marginLeft: "3%", marginRight: "3%" }} className="mt-3">
+    <div style={{ marginLeft: "2%", marginRight: "2%" }} className="mt-3">
       {/* <h4 className="hotDealTitile">Promotions</h4> */}
       <Carousel interval={5000}>
         <Carousel.Item
