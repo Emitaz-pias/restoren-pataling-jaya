@@ -3,8 +3,6 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   height: auto;
-  overflow-y: hidden;
-  overflow-x: hidden;
 }
 .bannerImg {
   width: 100%;
@@ -100,5 +98,6 @@
 body::-webkit-scrollbar {
   width: 0px;
 }
+
 @media screen and (min-width: 375px) {
 }

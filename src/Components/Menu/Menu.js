@@ -1,18 +1,17 @@
 import React from "react";
+import Category from "./Category/Category";
 import "./Menu.css";
 import Slider from "./Slider/Slider";
 const Menu = () => {
-  //Nasi Kukus Ayam Berempah
-
-  // RM5.00
-
-  // Nasi Kukus Ayam Goreng Kunyit
-  //RM6.00
-  // Mee Goreng Mamak
-  // RM6.00
   return (
     <section>
       <Slider></Slider>
+      <Category />
+      <sction>
+        <div id="all" style={{ height: "100vh", backgroundColor: "wheat" }}>
+          <h3>all menus here </h3>
+        </div>
+      </sction>
     </section>
   );
 };

@@ -120,6 +120,8 @@ const HomePage = () => {
           {selectedDiv === "infoDiv" && <Info />}
         </div>
       </section>
+
+      <sction></sction>
     </div>
   );
 };
