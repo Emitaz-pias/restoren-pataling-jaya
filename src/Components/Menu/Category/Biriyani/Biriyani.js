@@ -2,7 +2,7 @@ import React from "react";
 
 const Biriyani = () => {
   return (
-    <div style={{ backgroundColor: "wheat", height: "30vh" }}>biriyani</div>
+    <div style={{ backgroundColor: "wheat", height: "80vh" }}>biriyani</div>
   );
 };
 

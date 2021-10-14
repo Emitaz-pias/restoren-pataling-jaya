@@ -2,7 +2,8 @@ import React from "react";
 import "./Category.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-const Category = () => {
+const Category = ({ detect }) => {
+  console.log("from category", detect);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -27,22 +28,52 @@ const Category = () => {
   return (
     <nav>
       <Carousel responsive={responsive} swipeable={true}>
-        <li className="categoryItem" to="/all">
+        <li
+          className={`${
+            detect === "active burger" && "activeNavItem"
+          }   categoryItem`}
+          to="/all"
+        >
           Burger
         </li>
-        <li className="categoryItem" to="/fastfood">
+        <li
+          className={`${
+            detect === "active pizza" && "activeNavItem"
+          }   categoryItem`}
+          to="/pizza"
+        >
           Pizza
         </li>
-        <li className="categoryItem" to="/burger">
+        <li
+          className={`${
+            detect === "active biriyani" && "activeNavItem"
+          }   categoryItem`}
+          to="/burger"
+        >
           Briyani
         </li>
-        <li className="categoryItem" to="/veg">
+        <li
+          className={`${
+            detect === "active pasta" && "activeNavItem"
+          }   categoryItem`}
+          to="/veg"
+        >
           Pasta
         </li>
-        <li className="categoryItem" to="/sandwitch">
+        <li
+          className={`${
+            detect === "active rice" && "activeNavItem"
+          }   categoryItem`}
+          to="/sandwitch"
+        >
           Rice
         </li>
-        <li className="categoryItem" to="/pizza">
+        <li
+          className={`${
+            detect === "active rice" && "activeNavItem"
+          }   categoryItem`}
+          to="/pizza"
+        >
           IceBlended
         </li>
         <li className="categoryItem" to="/pastry">

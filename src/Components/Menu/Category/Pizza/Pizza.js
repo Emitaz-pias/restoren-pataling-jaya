@@ -1,7 +1,9 @@
 import React from "react";
 
 const Pizza = () => {
-  return <div>h1 pizza</div>;
+  return (
+    <div style={{ backgroundColor: "goldenrod", height: "80vh" }}>pizza</div>
+  );
 };
 
 export default Pizza;
