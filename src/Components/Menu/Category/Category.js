@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./Category.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
 const Category = () => {
   const responsive = {
     superLargeDesktop: {
@@ -24,41 +23,39 @@ const Category = () => {
       slidesToSlide: 3, // optional, default to 1.
     },
   };
+
   return (
     <nav>
       <Carousel responsive={responsive} swipeable={true}>
-        <a className="categoryItem" href="/all">
-          All
-        </a>
-        <a className="categoryItem" href="/fastfood">
-          FastFood
-        </a>
-        <a className="categoryItem" href="/burger">
+        <li className="categoryItem" to="/all">
           Burger
-        </a>
-        <a className="categoryItem" href="/veg">
-          Veg.
-        </a>
-        <a className="categoryItem" href="/sandwitch">
-          Sandwitch
-        </a>
-        <a className="categoryItem" href="/pizza">
+        </li>
+        <li className="categoryItem" to="/fastfood">
           Pizza
-        </a>
-        <a className="categoryItem" href="/pastry">
-          Pastry
-        </a>
-        <a className="categoryItem" href="/browny">
-          Browny
-        </a>
-        <a className="categoryItem" href="/nasilemaks">
-          NasiLemaks
-        </a>
-        <a className="categoryItem" href="/anything">
-          Ghorar Dim
-        </a>
+        </li>
+        <li className="categoryItem" to="/burger">
+          Briyani
+        </li>
+        <li className="categoryItem" to="/veg">
+          Pasta
+        </li>
+        <li className="categoryItem" to="/sandwitch">
+          Rice
+        </li>
+        <li className="categoryItem" to="/pizza">
+          IceBlended
+        </li>
+        <li className="categoryItem" to="/pastry">
+          Juice
+        </li>
+        <li className="categoryItem" to="/browny">
+          Beverage
+        </li>
+
+        <li className="categoryItem" href="/anything">
+          GhorarDim
+        </li>
       </Carousel>
-      ;
     </nav>
   );
 };

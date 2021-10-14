@@ -1,19 +1,11 @@
-nav {
+.navigationBar {
   position: -webkit-sticky;
+  position: -moz-sticky;
   position: sticky;
   top: 10px;
 }
-nav ul {
-  display: flex;
-  margin-top: 10px;
-}
-nav ul li {
-  margin-left: 10px;
-  list-style: none;
-}
-nav ul li a {
-  text-decoration: none;
-  margin-left: 10px;
-}
+
 .categoryItem {
+  margin-left: 20px;
+  list-style: none;
 }

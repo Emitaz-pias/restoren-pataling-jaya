@@ -1,7 +1,5 @@
 .fullPage {
   width: 100%;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   height: auto;
 }
 .bannerImg {
