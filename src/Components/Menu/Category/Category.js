@@ -70,7 +70,7 @@ const Category = ({ detect }) => {
         </li>
         <li
           className={`${
-            detect === "active rice" && "activeNavItem"
+            detect === "active rice " && "activeNavItem"
           }   categoryItem`}
           to="/pizza"
         >
