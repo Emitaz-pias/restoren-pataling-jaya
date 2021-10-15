@@ -3,6 +3,7 @@
   position: -moz-sticky;
   position: sticky;
   top: 10px;
+  z-index: 10;
 }
 
 .categoryItem {

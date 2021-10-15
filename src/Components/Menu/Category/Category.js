@@ -1,92 +1,88 @@
 import React from "react";
 import "./Category.css";
-import Carousel from "react-multi-carousel";
+// import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-const Category = ({ detect }) => {
-  console.log("from category", detect);
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 100,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 30,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 10,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 5,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-  };
-
+const Category = ({
+  visibleSection,
+  pizzaRef,
+  burgerRef,
+  biriyaniRef,
+  juiceRef,
+  riceRef,
+  pastaRef,
+  headerRef,
+  scrollTo,
+}) => {
   return (
-    <nav>
-      <Carousel responsive={responsive} swipeable={true}>
-        <li
-          className={`${
-            detect === "active burger" && "activeNavItem"
-          }   categoryItem`}
-          to="/all"
+    <nav className="navigationBar">
+      <div className="header" ref={headerRef}>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "burger" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(burgerRef.current);
+          }}
         >
           Burger
-        </li>
-        <li
-          className={`${
-            detect === "active pizza" && "activeNavItem"
-          }   categoryItem`}
-          to="/pizza"
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "pizza" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(pizzaRef.current);
+          }}
         >
           Pizza
-        </li>
-        <li
-          className={`${
-            detect === "active biriyani" && "activeNavItem"
-          }   categoryItem`}
-          to="/burger"
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "biriyani" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(biriyaniRef.current);
+          }}
         >
           Briyani
-        </li>
-        <li
-          className={`${
-            detect === "active pasta" && "activeNavItem"
-          }   categoryItem`}
-          to="/veg"
-        >
-          Pasta
-        </li>
-        <li
-          className={`${
-            detect === "active rice" && "activeNavItem"
-          }   categoryItem`}
-          to="/sandwitch"
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "rice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(riceRef.current);
+          }}
         >
           Rice
-        </li>
-        <li
-          className={`${
-            detect === "active rice " && "activeNavItem"
-          }   categoryItem`}
-          to="/pizza"
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "pasta" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(pastaRef.current);
+          }}
         >
-          IceBlended
-        </li>
-        <li className="categoryItem" to="/pastry">
+          Pasta
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
           Juice
-        </li>
-        <li className="categoryItem" to="/browny">
-          Beverage
-        </li>
-
-        <li className="categoryItem" href="/anything">
-          GhorarDim
-        </li>
-      </Carousel>
+        </button>
+      </div>
     </nav>
   );
 };
