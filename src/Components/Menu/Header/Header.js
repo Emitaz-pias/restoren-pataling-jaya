@@ -17,7 +17,7 @@ const Header = ({
     if (window.scrollY > 370) {
       setShowHeader(true);
     }
-    if (window.scrollY < 330) {
+    if (window.scrollY < 360) {
       setShowHeader(false);
     }
   }, [window.scrollY]);
