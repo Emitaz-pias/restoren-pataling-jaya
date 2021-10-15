@@ -1,11 +1,3 @@
-.navigationBar {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: sticky;
-  top: 10px;
-  z-index: 10;
-}
-
 .categoryItem {
   margin-left: 20px;
   list-style: none;

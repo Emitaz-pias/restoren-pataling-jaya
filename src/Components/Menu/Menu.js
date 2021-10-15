@@ -9,6 +9,7 @@ import Juice from "../Menu/Category/Juice/Juice";
 import Pasta from "../Menu/Category/Pasta/Pasta";
 import Pizza from "../Menu/Category/Pizza/Pizza";
 import Rice from "../Menu/Category/Rice/Rice";
+import Header from "./Header/Header";
 
 const getDimensions = (ele) => {
   const { height } = ele.getBoundingClientRect();
@@ -118,7 +119,7 @@ const Menu = () => {
         <div className="top-spacer" />
 
         <div className="content">
-          <Category
+          <Header
             visibleSection={visibleSection}
             headerRef={headerRef}
             burgerRef={burgerRef}
@@ -129,23 +130,25 @@ const Menu = () => {
             biriyani={biriyaniRef}
             scrollTo={scrollTo}
           />
-          <div className="section" id="burger" ref={burgerRef}>
+
+          <div className="section text-center" id="burger" ref={burgerRef}>
             burger
           </div>
-          <div className="section" id="pizza" ref={pizzaRef}>
+          <div className="section text-center" id="pizza" ref={pizzaRef}>
             pizza
           </div>
-          <div className="section" id="pasta" ref={pastaRef}>
-            pasta
-          </div>
-          <div className="section" id="biriyani" ref={biriyaniRef}>
+          <div className="section text-center" id="biriyani" ref={biriyaniRef}>
             biriyani
           </div>
-          <div className="section" id="juice" ref={juiceRef}>
-            juice
+          <div className="section text-center" id="rice" ref={riceRef}>
+            <div className="text-danger"> rice</div>
           </div>
-          <div className="section" id="rice" ref={riceRef}>
-            rice
+          <div className="section text-center" id="pasta" ref={pastaRef}>
+            pasta
+          </div>
+
+          <div className="section text" id="juice" ref={juiceRef}>
+            juice
           </div>
         </div>
 

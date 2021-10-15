@@ -1,0 +1,7 @@
+.fixedHeader {
+  position: fixed;
+  top: 0;
+}
+.hideHeader {
+  display: none;
+}
