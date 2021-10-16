@@ -1,7 +1,5 @@
-.categoryItem {
+.navigationBar {
   margin-left: 20px;
   list-style: none;
-}
-.activeNavItem {
   background-color: red;
 }

@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import Category from "./Category/Category";
 import "./Menu.css";
 import Slider from "./Slider/Slider";
-import Beverage from "../Menu/Category/Beverage/Beverage";
-import Biriyani from "../Menu/Category/Biriyani/Biriyani";
-import Burger from "../Menu/Category/Burger/Burger";
-import Juice from "../Menu/Category/Juice/Juice";
-import Pasta from "../Menu/Category/Pasta/Pasta";
-import Pizza from "../Menu/Category/Pizza/Pizza";
-import Rice from "../Menu/Category/Rice/Rice";
+// import Beverage from "../Menu/Category/Beverage/Beverage";
+// import Biriyani from "../Menu/Category/Biriyani/Biriyani";
+// import Burger from "../Menu/Category/Burger/Burger";
+// import Juice from "../Menu/Category/Juice/Juice";
+// import Pasta from "../Menu/Category/Pasta/Pasta";
+// import Pizza from "../Menu/Category/Pizza/Pizza";
+// import Rice from "../Menu/Category/Rice/Rice";
 import Header from "./Header/Header";
 
 const getDimensions = (ele) => {
@@ -31,35 +30,9 @@ const scrollTo = (ele) => {
 };
 
 const Menu = () => {
-  // const changeBackgroundColor = () => {
-  //   // console.log("scrollded is", window.scrollY);
-  //   if (window.scrollY < 738 && window.scrollY > 0) {
-  //     setActive("active burger");
-  //   }
-  //   if (window.scrollY < 1476 && window.scrollY > 739) {
-  //     setActive("active pizza");
-  //   }
-  //   if (window.scrollY < 2214 && window.scrollY > 1442) {
-  //     setActive("active biriyani");
-  //   }
-  //   if (window.scrollY < 2952 && window.scrollY > 2140) {
-  //     setActive("active pasta");
-  //   }
-  //   if (window.scrollY < 3690 && window.scrollY > 2828) {
-  //     setActive("active rice");
-  //   }
-  //   if (window.scrollY < 4428 && window.scrollY > 3519) {
-  //     setActive("active beverage");
-  //   }
-  //   if (window.scrollY < 5166 && window.scrollY > 4429) {
-  //     setActive("active juice");
-  //   }
-  // };
-
-  // console.log("from state", active);
-
   const [visibleSection, setVisibleSection] = useState();
-
+  const [triggeredScroll, setTriggeredScroll] = useState(false);
+  // console.log(triggeredScroll);
   const headerRef = useRef(null);
   const burgerRef = useRef(null);
   const pizzaRef = useRef(null);
@@ -86,6 +59,15 @@ const Menu = () => {
 
       const selected = sectionRefs.find(({ section, ref }) => {
         const ele = ref.current;
+        const em = document.getElementById("rice");
+        if (window.scrollY > 370) {
+          if (em === ele) {
+            setTriggeredScroll(true);
+          } else {
+            setTriggeredScroll(false);
+          }
+        }
+
         if (ele) {
           const { offsetBottom, offsetTop } = getDimensions(ele);
           return scrollPosition > offsetTop && scrollPosition < offsetBottom;
@@ -105,6 +87,7 @@ const Menu = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [visibleSection]);
+
   return (
     <section>
       <Slider></Slider>

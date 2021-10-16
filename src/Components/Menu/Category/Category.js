@@ -82,6 +82,105 @@ const Category = ({
         >
           Juice
         </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
+        <button
+          type="button"
+          className={`header_link ${
+            visibleSection === "juice" ? "selected" : ""
+          }`}
+          onClick={() => {
+            scrollTo(juiceRef.current);
+          }}
+        >
+          Juice
+        </button>
       </div>
     </nav>
   );

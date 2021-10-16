@@ -1,4 +1,7 @@
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import Category from "../Category/Category";
 import "./Header.css";
 const Header = ({
@@ -21,11 +24,37 @@ const Header = ({
       setShowHeader(false);
     }
   }, [window.scrollY]);
-  console.log(showHeader);
+  // console.log(showHeader);
+  const [openSearch, setOpenSearch] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+
+  //
+  const handleToggleSearch = () => {
+    setOpenSearch(!openSearch);
+  };
+  // handleSearch
+  const handleSearch = () => {};
   return (
     <div className={`${showHeader ? "fixedHeader" : "hideHeader"}`}>
       <div className="d-flex align-items-center">
-        <input placeholder="search" />
+        {openSearch ? (
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input
+              type="text"
+              placeholder="Search"
+              {...register("search", { required: true, maxLength: 80 })}
+            />
+
+            <FontAwesomeIcon onClick={handleSubmit(onSubmit)} icon={faSearch} />
+          </form>
+        ) : (
+          <FontAwesomeIcon onClick={handleToggleSearch} icon={faSearch} />
+        )}
         <h2>SR Bistro</h2>
       </div>
       <Category
