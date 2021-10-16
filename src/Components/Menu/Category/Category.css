@@ -2,4 +2,8 @@
   margin-left: 20px;
   list-style: none;
   background-color: red;
+  overflow-x: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
 }

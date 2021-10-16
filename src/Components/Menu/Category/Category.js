@@ -93,7 +93,7 @@ const Category = ({
         >
           Juice
         </button>
-        <button
+        {/* <button
           type="button"
           className={`header_link ${
             visibleSection === "juice" ? "selected" : ""
@@ -147,8 +147,8 @@ const Category = ({
           }}
         >
           Juice
-        </button>
-        <button
+        </button> */}
+        {/* <button
           type="button"
           className={`header_link ${
             visibleSection === "juice" ? "selected" : ""
@@ -180,7 +180,7 @@ const Category = ({
           }}
         >
           Juice
-        </button>
+        </button> */}
       </div>
     </nav>
   );

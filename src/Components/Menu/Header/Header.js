@@ -40,7 +40,7 @@ const Header = ({
   // handleSearch
   const handleSearch = () => {};
   return (
-    <div className={`${showHeader ? "fixedHeader" : "hideHeader"}`}>
+    <div className={`${showHeader ? "fixedHeader" : "hideHeader"} bg-white`}>
       <div className="d-flex align-items-center">
         {openSearch ? (
           <form onSubmit={handleSubmit(onSubmit)}>

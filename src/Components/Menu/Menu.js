@@ -8,6 +8,7 @@ import Slider from "./Slider/Slider";
 // import Pasta from "../Menu/Category/Pasta/Pasta";
 // import Pizza from "../Menu/Category/Pizza/Pizza";
 // import Rice from "../Menu/Category/Rice/Rice";
+import Category from "./Category/Category";
 import Header from "./Header/Header";
 
 const getDimensions = (ele) => {
@@ -99,20 +100,35 @@ const Menu = () => {
         <Rice />
         <Beverage />
         <Juice /> */}
+
         <div className="top-spacer" />
 
         <div className="content">
-          <Header
-            visibleSection={visibleSection}
-            headerRef={headerRef}
-            burgerRef={burgerRef}
-            pizzaRef={pizzaRef}
-            pastaRef={pastaRef}
-            riceRef={riceRef}
-            juiceRef={juiceRef}
-            biriyani={biriyaniRef}
-            scrollTo={scrollTo}
-          />
+          {window.scrollY > 360 ? (
+            <Header
+              visibleSection={visibleSection}
+              headerRef={headerRef}
+              burgerRef={burgerRef}
+              pizzaRef={pizzaRef}
+              pastaRef={pastaRef}
+              riceRef={riceRef}
+              juiceRef={juiceRef}
+              biriyani={biriyaniRef}
+              scrollTo={scrollTo}
+            />
+          ) : (
+            <Category
+              visibleSection={visibleSection}
+              headerRef={headerRef}
+              burgerRef={burgerRef}
+              pizzaRef={pizzaRef}
+              pastaRef={pastaRef}
+              riceRef={riceRef}
+              juiceRef={juiceRef}
+              biriyani={biriyaniRef}
+              scrollTo={scrollTo}
+            />
+          )}
 
           <div className="section text-center" id="burger" ref={burgerRef}>
             burger
