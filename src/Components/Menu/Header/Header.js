@@ -43,44 +43,6 @@ const Header = ({
 
   return (
     <div className={`${showHeader ? "fixedHeader" : "hideHeader"} bg-white`}>
-      <div className="d-flex align-items-center  w-100">
-        {openSearch ? (
-          <div className="w-100 mb-1">
-            <h2 className="text-center" style={{ fontFamily: "Lato" }}>
-              SR Bistro
-            </h2>
-            <form
-              className="d-flex align-items-center justify-content-around"
-              onSubmit={handleSubmit(onSubmit)}
-            >
-              <input
-                className="form-control-md"
-                type="text"
-                placeholder="Search"
-                {...register("search", { required: true, maxLength: 80 })}
-              />
-
-              <FontAwesomeIcon
-                className="me-3"
-                onClick={handleSubmit(onSubmit)}
-                icon={faSearch}
-              />
-            </form>
-          </div>
-        ) : (
-          <div className="d-flex align-items-center justify-content-center w-100">
-            <FontAwesomeIcon
-              className="ms-2"
-              onClick={handleToggleSearch}
-              icon={faSearch}
-            />
-
-            <h2 className="ms-4 ps-4" style={{ fontFamily: "Lato" }}>
-              SR Bistro
-            </h2>
-          </div>
-        )}
-      </div>
       <Category
         visibleSection={visibleSection}
         headerRef={headerRef}
@@ -92,6 +54,41 @@ const Header = ({
         biriyani={biriyaniRef}
         scrollTo={scrollTo}
       />
+      <div className="d-flex align-items-center  w-100">
+        {openSearch ? (
+          <form
+            style={{ position: "relative", left: "20%" }}
+            className="mb-2"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <input
+              className="form-control-md "
+              type="text"
+              placeholder="Search"
+              style={{
+                outline: "none",
+                border: "none",
+                borderBottom: "1px solid black",
+              }}
+              {...register("search", { required: true, maxLength: 80 })}
+            />
+
+            {/* <FontAwesomeIcon
+              className="me-3"
+              onClick={handleSubmit(onSubmit)}
+              icon={faSearch}
+            /> */}
+          </form>
+        ) : (
+          <div style={{ position: "relative", left: "40%" }}>
+            <FontAwesomeIcon
+              size="2x"
+              onClick={handleToggleSearch}
+              icon={faSearch}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
