@@ -117,17 +117,19 @@ const Menu = () => {
               scrollTo={scrollTo}
             />
           ) : (
-            <Category
-              visibleSection={visibleSection}
-              headerRef={headerRef}
-              burgerRef={burgerRef}
-              pizzaRef={pizzaRef}
-              pastaRef={pastaRef}
-              riceRef={riceRef}
-              juiceRef={juiceRef}
-              biriyani={biriyaniRef}
-              scrollTo={scrollTo}
-            />
+            <div style={{ marginLeft: "2em" }}>
+              <Category
+                visibleSection={visibleSection}
+                headerRef={headerRef}
+                burgerRef={burgerRef}
+                pizzaRef={pizzaRef}
+                pastaRef={pastaRef}
+                riceRef={riceRef}
+                juiceRef={juiceRef}
+                biriyani={biriyaniRef}
+                scrollTo={scrollTo}
+              />
+            </div>
           )}
 
           <div className="section text-center" id="burger" ref={burgerRef}>
