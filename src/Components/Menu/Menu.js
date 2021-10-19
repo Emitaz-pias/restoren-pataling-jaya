@@ -57,10 +57,12 @@ const Menu = () => {
     const handleScroll = () => {
       const { height: headerHeight } = getDimensions(headerRef.current);
       const scrollPosition = window.scrollY + headerHeight;
-
       const selected = sectionRefs.find(({ section, ref }) => {
         const ele = ref.current;
         const em = document.getElementById("rice");
+        if (ele === em) {
+          console.log("visible section is selected", ele);
+        }
         if (window.scrollY > 370) {
           if (em === ele) {
             setTriggeredScroll(true);

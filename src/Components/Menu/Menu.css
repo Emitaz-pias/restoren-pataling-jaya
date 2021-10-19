@@ -1,6 +1,5 @@
 .bottom-spacer {
   height: 30vh;
-  background-color: red;
 }
 
 /* .sticky {
@@ -17,11 +16,12 @@
   justify-content: center;
   background-color: #fff;
 }
+/* color: #314d4a; */
 
 .header_link {
   padding: 20px;
-  color: #314d4a;
   font-weight: bold;
+  background-color: rgb(253, 253, 253);
   border: none;
   border-bottom: 3px solid transparent;
   cursor: pointer;

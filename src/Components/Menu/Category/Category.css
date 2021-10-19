@@ -1,6 +1,7 @@
 .navigationBar {
   list-style: none;
-  background-color: red;
   overflow-x: scroll;
-  width: 100%;
+}
+::-webkit-scrollbar {
+  display: none;
 }

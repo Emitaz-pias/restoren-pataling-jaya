@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Category.css";
-// import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const Category = ({
   visibleSection,
@@ -14,8 +13,11 @@ const Category = ({
   scrollTo,
 }) => {
   return (
-    <nav className="navigationBar">
-      <div className="header" ref={headerRef}>
+    <nav
+      style={{ scrollMarginLeft: window.scrollY > 300 ? 600 : 100 }}
+      className="navigationBar"
+    >
+      <div className="d-flex" ref={headerRef}>
         <button
           type="button"
           className={`header_link ${
