@@ -42,6 +42,14 @@ const Menu = () => {
   const juiceRef = useRef(null);
   const beverageRef = useRef(null);
   const riceRef = useRef(null);
+  // menu refs here
+  const burgerMenuRef = useRef(null);
+  const pizzaMenuRef = useRef(null);
+  const biriyaniMenuRef = useRef(null);
+  const riceMenuRef = useRef(null);
+  const pastaMenuRef = useRef(null);
+  const juiceMenuRef = useRef(null);
+  const shakesMenuRef = useRef(null);
 
   const sectionRefs = [
     { section: "burger", ref: burgerRef },
@@ -51,6 +59,13 @@ const Menu = () => {
     { section: "juice", ref: juiceRef },
     { section: "beverage", ref: beverageRef },
     { section: "rice", ref: riceRef },
+    { menu: "burgerMenu", ref: burgerMenuRef },
+    { menu: "pizzaMenu", ref: pizzaMenuRef },
+    { menu: "biriyaniMenu", ref: biriyaniMenuRef },
+    { menu: "riceMenu", ref: riceMenuRef },
+    { menu: "pastaMenu", ref: pastaMenuRef },
+    { menu: "juiceMenu", ref: juiceMenuRef },
+    { menu: "shakesMenu", ref: shakesMenuRef },
   ];
 
   useEffect(() => {
@@ -61,7 +76,6 @@ const Menu = () => {
         const ele = ref.current;
         const em = document.getElementById("rice");
         if (ele === em) {
-          console.log("visible section is selected", ele);
         }
         if (window.scrollY > 370) {
           if (em === ele) {
@@ -128,8 +142,15 @@ const Menu = () => {
                 pastaRef={pastaRef}
                 riceRef={riceRef}
                 juiceRef={juiceRef}
-                biriyani={biriyaniRef}
+                biriyaniRef={biriyaniRef}
                 scrollTo={scrollTo}
+                burgerMenuRef={burgerMenuRef}
+                pizzaMenuRef={pizzaMenuRef}
+                biriyaniMenuRef={biriyaniMenuRef}
+                riceMenuRef={riceMenuRef}
+                pastaMenuRef={pastaMenuRef}
+                juiceMenuRef={juiceMenuRef}
+                shakesMenuRef={shakesMenuRef}
               />
             </div>
           )}
@@ -137,7 +158,11 @@ const Menu = () => {
           <div className="section text-center" id="burger" ref={burgerRef}>
             burger
           </div>
-          <div className="section text-center" id="pizza" ref={pizzaRef}>
+          <div
+            className="section text-center"
+            id="pizza Pias givem"
+            ref={pizzaRef}
+          >
             pizza
           </div>
           <div className="section text-center" id="biriyani" ref={biriyaniRef}>
