@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Menu.css";
 import Slider from "./Slider/Slider";
 // import Beverage from "../Menu/Category/Beverage/Beverage";
-// import Biriyani from "../Menu/Category/Biriyani/Biriyani";
-// import Burger from "../Menu/Category/Burger/Burger";
-// import Juice from "../Menu/Category/Juice/Juice";
-// import Pasta from "../Menu/Category/Pasta/Pasta";
-// import Pizza from "../Menu/Category/Pizza/Pizza";
-// import Rice from "../Menu/Category/Rice/Rice";
+import Biriyani from "../Menu/Category/Biriyani/Biriyani";
+import Burger from "../Menu/Category/Burger/Burger";
+import Juice from "../Menu/Category/Juice/Juice";
+import Pasta from "../Menu/Category/Pasta/Pasta";
+import Pizza from "../Menu/Category/Pizza/Pizza";
+import Rice from "../Menu/Category/Rice/Rice";
 import Category from "./Category/Category";
 import Header from "./Header/Header";
 
@@ -32,8 +32,7 @@ const scrollTo = (ele) => {
 
 const Menu = () => {
   const [visibleSection, setVisibleSection] = useState();
-  const [triggeredScroll, setTriggeredScroll] = useState(false);
-  // console.log(triggeredScroll);
+
   const headerRef = useRef(null);
   const burgerRef = useRef(null);
   const pizzaRef = useRef(null);
@@ -74,16 +73,6 @@ const Menu = () => {
       const scrollPosition = window.scrollY + headerHeight;
       const selected = sectionRefs.find(({ section, ref }) => {
         const ele = ref.current;
-        const em = document.getElementById("rice");
-        if (ele === em) {
-        }
-        if (window.scrollY > 370) {
-          if (em === ele) {
-            setTriggeredScroll(true);
-          } else {
-            setTriggeredScroll(false);
-          }
-        }
 
         if (ele) {
           const { offsetBottom, offsetTop } = getDimensions(ele);
@@ -106,7 +95,7 @@ const Menu = () => {
   }, [visibleSection]);
 
   return (
-    <section>
+    <div>
       <Slider></Slider>
       <div>
         {/* <Burger />
@@ -129,11 +118,11 @@ const Menu = () => {
               pastaRef={pastaRef}
               riceRef={riceRef}
               juiceRef={juiceRef}
-              biriyani={biriyaniRef}
+              biriyaniRef={biriyaniRef}
               scrollTo={scrollTo}
             />
           ) : (
-            <div style={{ marginLeft: "2em" }}>
+            <div>
               <Category
                 visibleSection={visibleSection}
                 headerRef={headerRef}
@@ -156,33 +145,29 @@ const Menu = () => {
           )}
 
           <div className="section text-center" id="burger" ref={burgerRef}>
-            burger
+            <Burger />
           </div>
-          <div
-            className="section text-center"
-            id="pizza Pias givem"
-            ref={pizzaRef}
-          >
-            pizza
+          <div className="section text-center" id="pizza" ref={pizzaRef}>
+            <Pizza />
           </div>
           <div className="section text-center" id="biriyani" ref={biriyaniRef}>
-            biriyani
+            <Biriyani />
           </div>
           <div className="section text-center" id="rice" ref={riceRef}>
-            <div className="text-danger"> rice</div>
+            <Rice />
           </div>
           <div className="section text-center" id="pasta" ref={pastaRef}>
-            pasta
+            <Pasta />
           </div>
 
           <div className="section text" id="juice" ref={juiceRef}>
-            juice
+            <Juice />
           </div>
         </div>
 
         <div className="bottom-spacer" />
       </div>
-    </section>
+    </div>
   );
 };
 

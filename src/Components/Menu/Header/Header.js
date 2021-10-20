@@ -131,7 +131,7 @@ const Header = ({
         pastaRef={pastaRef}
         riceRef={riceRef}
         juiceRef={juiceRef}
-        biriyani={biriyaniRef}
+        biriyaniRef={biriyaniRef}
         scrollTo={scrollTo}
       />
     </div>

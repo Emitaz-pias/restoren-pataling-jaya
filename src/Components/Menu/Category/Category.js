@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "./Category.css";
 import "react-multi-carousel/lib/styles.css";
 const Category = ({
@@ -11,18 +11,7 @@ const Category = ({
   pastaRef,
   headerRef,
   scrollTo,
-  burgerMenuRef,
-  pizzaMenuRef,
-  biriyaniMenuRef,
-  riceMenuRef,
-  pastaMenuRef,
-  juiceMenuRef,
-  shakesMenuRef,
 }) => {
-  const [scrollingUp, setScrollingUp] = useState(false);
-  const [scrollingDown, setScrollingDown] = useState(false);
-  const [stoppedScrolling, setStoppedScrolling] = useState(0);
-  // console.log("stoppedScrolling", stoppedScrolling);
   let oldScrollY;
   const detectScrollDirection = () => {
     if (oldScrollY > window.scrollY) {
@@ -63,7 +52,6 @@ const Category = ({
     <nav id="navBar" className="navigationBar">
       <div className="d-flex" ref={headerRef}>
         <button
-          ref={burgerMenuRef}
           type="button"
           className={`header_link ${
             visibleSection === "burger" ? "selected" : ""
@@ -75,7 +63,6 @@ const Category = ({
           Burger
         </button>
         <button
-          ref={pizzaMenuRef}
           type="button"
           id="piasGi"
           className={`header_link ${
@@ -88,7 +75,6 @@ const Category = ({
           Pizza
         </button>
         <button
-          ref={biriyaniMenuRef}
           type="button"
           className={`header_link ${
             visibleSection === "biriyani" ? "selected" : ""
@@ -100,7 +86,6 @@ const Category = ({
           Biriyani
         </button>
         <button
-          ref={riceMenuRef}
           type="button"
           className={`header_link ${
             visibleSection === "rice" ? "selected" : ""
@@ -112,7 +97,6 @@ const Category = ({
           Rice
         </button>
         <button
-          ref={pastaMenuRef}
           type="button"
           className={`header_link ${
             visibleSection === "pasta" ? "selected" : ""
@@ -124,7 +108,6 @@ const Category = ({
           Pasta
         </button>
         <button
-          ref={juiceMenuRef}
           type="button"
           className={`header_link ${
             visibleSection === "juice" ? "selected" : ""
@@ -136,7 +119,6 @@ const Category = ({
           Juice
         </button>
         <button
-          ref={shakesMenuRef}
           type="button"
           className={`header_link ${
             visibleSection === "juice" ? "selected" : ""
