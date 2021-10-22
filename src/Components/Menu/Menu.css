@@ -14,46 +14,22 @@
 .header {
   display: flex;
   justify-content: center;
-  background-color: #fff;
 }
 /* color: #314d4a; */
 
 .header_link {
-  padding: 20px;
+  padding: 0.938rem;
   font-weight: bold;
-  background-color: rgb(253, 253, 253);
-  border: none;
-  border-bottom: 3px solid transparent;
   cursor: pointer;
-  outline: none;
-  width: 3.813;
-  height: 4.438;
+  border-radius: 15px;
+  border: none;
 }
 
 .selected {
-  border-bottom: 3px solid #11bb9a;
-  color: #11bb9a;
+  background-color: black;
+  color: white;
 }
 
 /* /* .section {
   height: 80vh;
 } */
-
-#pizza {
-  background-color: #a388e8;
-}
-
-#burger {
-  background-color: #f4769e;
-}
-
-#pasta {
-  background-color: #8face0;
-}
-#biriyani {
-  background-color: cyan;
-}
-
-#rice {
-  background-color: #342343;
-}

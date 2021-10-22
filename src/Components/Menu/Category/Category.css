@@ -1,13 +1,18 @@
 .navigationBar {
   list-style: none;
   overflow-x: scroll;
+  position: sticky;
 }
 ::-webkit-scrollbar {
   display: none;
 }
 
 .categoryBtn {
-  width: 3.813;
-  height: 4.438;
-  box-shadow: 5px 5px 5px rgb(255, 68, 68);
+  border-radius: 10px;
+  margin: 0.1rem;
+  background-color: white;
+}
+.categoryBtn:hover {
+  background-color: black;
+  color: white;
 }

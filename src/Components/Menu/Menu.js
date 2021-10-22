@@ -80,7 +80,7 @@ const Menu = () => {
 
         if (visibleSection === "biriyani") {
           const doc = document.getElementById("navBar");
-          doc.scrollLeft -= 20;
+          doc.scrollLeft -= 30;
         }
 
         if (visibleSection === "pasta") {

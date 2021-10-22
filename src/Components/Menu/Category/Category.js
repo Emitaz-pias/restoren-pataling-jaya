@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Category.css";
 import "react-multi-carousel/lib/styles.css";
 const Category = ({
@@ -17,7 +17,6 @@ const Category = ({
     <nav id="navBar" className="navigationBar">
       <div className="d-flex" ref={headerRef}>
         <button
-          type="button"
           className={`header_link ${
             visibleSection === "burger" ? "selected" : "categoryBtn"
           }`}
@@ -27,6 +26,7 @@ const Category = ({
         >
           Burger
         </button>
+
         <button
           type="button"
           id="piasGi"
@@ -42,7 +42,7 @@ const Category = ({
         <button
           type="button"
           className={`header_link ${
-            visibleSection === "biriyani" ? "selected" : ""
+            visibleSection === "biriyani" ? "selected" : "categoryBtn"
           }`}
           onClick={() => {
             scrollTo(biriyaniRef.current);
@@ -53,7 +53,7 @@ const Category = ({
         <button
           type="button"
           className={`header_link ${
-            visibleSection === "rice" ? "selected" : ""
+            visibleSection === "rice" ? "selected" : "categoryBtn"
           }`}
           onClick={() => {
             scrollTo(riceRef.current);
@@ -64,7 +64,7 @@ const Category = ({
         <button
           type="button"
           className={`header_link ${
-            visibleSection === "pasta" ? "selected" : ""
+            visibleSection === "pasta" ? "selected" : "categoryBtn"
           }`}
           onClick={() => {
             scrollTo(pastaRef.current);
@@ -75,7 +75,7 @@ const Category = ({
         <button
           type="button"
           className={`header_link ${
-            visibleSection === "juice" ? "selected" : ""
+            visibleSection === "juice" ? "selected" : "categoryBtn"
           }`}
           onClick={() => {
             scrollTo(juiceRef.current);
@@ -86,7 +86,7 @@ const Category = ({
         <button
           type="button"
           className={`header_link ${
-            visibleSection === "beverage" ? "selected" : ""
+            visibleSection === "beverage" ? "selected" : "categoryBtn"
           }`}
           onClick={() => {
             scrollTo(beverageRef.current);
