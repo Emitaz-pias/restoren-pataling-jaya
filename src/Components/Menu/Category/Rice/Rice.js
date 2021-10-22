@@ -1,7 +1,21 @@
 import React from "react";
+import MenuCard from "../../../Home/MenuCard/MenuCard";
+import { riceData } from "./RiceData";
 
 const Rice = () => {
-  return <div style={{ backgroundColor: "aqua", height: "80vh" }}>rice</div>;
+  return (
+    <div>
+      {riceData.map((rice) => (
+        <MenuCard
+          productName={rice.name}
+          productDescription={rice.description}
+          productImage={rice.image}
+          productPrice={rice.price}
+          deletedPrice={rice.deletedPrice}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default Rice;

@@ -15,16 +15,22 @@ export const burgerData = [
   },
   {
     name: "Chicken Naga Burger",
-    image: bbqChickenBurger,
     price: "RM.15",
-    deletedPrice: "20",
+    deletedPrice: "RM.20",
     description: "cheese,Naga",
   },
   {
     name: "Chicken Naga Burger",
     image: bbqChickenBurger,
     price: "RM.15",
-    deletedPrice: "20",
+    deletedPrice: "RM.20",
+    description: "cheese,Naga",
+  },
+  {
+    name: "Chicken Naga Burger",
+    image: bbqChickenBurger,
+    price: "RM.15",
+    deletedPrice: "RM.20",
     description: "cheese,Naga",
   },
 ];
