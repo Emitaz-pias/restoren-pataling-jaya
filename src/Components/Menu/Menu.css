@@ -26,6 +26,8 @@
   border-bottom: 3px solid transparent;
   cursor: pointer;
   outline: none;
+  width: 3.813;
+  height: 4.438;
 }
 
 .selected {
@@ -33,9 +35,9 @@
   color: #11bb9a;
 }
 
-/* .section {
+/* /* .section {
   height: 80vh;
-}
+} */
 
 #pizza {
   background-color: #a388e8;
@@ -54,4 +56,4 @@
 
 #rice {
   background-color: #342343;
-} */
+}

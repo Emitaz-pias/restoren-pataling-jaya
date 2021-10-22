@@ -17,6 +17,7 @@ const Header = ({
   riceRef,
   pastaRef,
   headerRef,
+  beverageRef,
   scrollTo,
 }) => {
   const [showHeader, setShowHeader] = useState(false);
@@ -132,6 +133,7 @@ const Header = ({
         riceRef={riceRef}
         juiceRef={juiceRef}
         biriyaniRef={biriyaniRef}
+        beverageRef={beverageRef}
         scrollTo={scrollTo}
       />
     </div>

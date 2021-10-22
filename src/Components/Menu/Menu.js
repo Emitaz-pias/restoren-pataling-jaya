@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Menu.css";
 import Slider from "./Slider/Slider";
-// import Beverage from "../Menu/Category/Beverage/Beverage";
+import Beverage from "../Menu/Category/Beverage/Beverage";
 import Biriyani from "../Menu/Category/Biriyani/Biriyani";
 import Burger from "../Menu/Category/Burger/Burger";
 import Juice from "../Menu/Category/Juice/Juice";
@@ -41,14 +41,6 @@ const Menu = () => {
   const juiceRef = useRef(null);
   const beverageRef = useRef(null);
   const riceRef = useRef(null);
-  // menu refs here
-  const burgerMenuRef = useRef(null);
-  const pizzaMenuRef = useRef(null);
-  const biriyaniMenuRef = useRef(null);
-  const riceMenuRef = useRef(null);
-  const pastaMenuRef = useRef(null);
-  const juiceMenuRef = useRef(null);
-  const shakesMenuRef = useRef(null);
 
   const sectionRefs = [
     { section: "burger", ref: burgerRef },
@@ -58,13 +50,6 @@ const Menu = () => {
     { section: "juice", ref: juiceRef },
     { section: "beverage", ref: beverageRef },
     { section: "rice", ref: riceRef },
-    { menu: "burgerMenu", ref: burgerMenuRef },
-    { menu: "pizzaMenu", ref: pizzaMenuRef },
-    { menu: "biriyaniMenu", ref: biriyaniMenuRef },
-    { menu: "riceMenu", ref: riceMenuRef },
-    { menu: "pastaMenu", ref: pastaMenuRef },
-    { menu: "juiceMenu", ref: juiceMenuRef },
-    { menu: "shakesMenu", ref: shakesMenuRef },
   ];
 
   useEffect(() => {
@@ -85,8 +70,40 @@ const Menu = () => {
       } else if (!selected && visibleSection) {
         setVisibleSection(undefined);
       }
-    };
 
+      let oldScrollY;
+      if (oldScrollY > window.scrollY) {
+        if (visibleSection === "pizza") {
+          const doc = document.getElementById("navBar");
+          doc.scrollLeft -= 10;
+        }
+
+        if (visibleSection === "biriyani") {
+          const doc = document.getElementById("navBar");
+          doc.scrollLeft -= 20;
+        }
+
+        if (visibleSection === "pasta") {
+          const doc = document.getElementById("navBar");
+          doc.scrollLeft -= 70;
+        }
+      }
+      oldScrollY = window.scrollY;
+    };
+    if (visibleSection === "pizza") {
+      const doc = document.getElementById("navBar");
+      doc.scrollLeft += 10;
+    }
+
+    if (visibleSection === "biriyani") {
+      const doc = document.getElementById("navBar");
+      doc.scrollLeft += 20;
+    }
+
+    if (visibleSection === "pasta") {
+      const doc = document.getElementById("navBar");
+      doc.scrollLeft += 70;
+    }
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -98,14 +115,6 @@ const Menu = () => {
     <div>
       <Slider></Slider>
       <div>
-        {/* <Burger />
-        <Pizza />
-        <Biriyani />
-        <Pasta />
-        <Rice />
-        <Beverage />
-        <Juice /> */}
-
         <div className="top-spacer" />
 
         <div className="content">
@@ -119,6 +128,7 @@ const Menu = () => {
               riceRef={riceRef}
               juiceRef={juiceRef}
               biriyaniRef={biriyaniRef}
+              beverageRef={beverageRef}
               scrollTo={scrollTo}
             />
           ) : (
@@ -132,14 +142,8 @@ const Menu = () => {
                 riceRef={riceRef}
                 juiceRef={juiceRef}
                 biriyaniRef={biriyaniRef}
+                beverageRef={beverageRef}
                 scrollTo={scrollTo}
-                burgerMenuRef={burgerMenuRef}
-                pizzaMenuRef={pizzaMenuRef}
-                biriyaniMenuRef={biriyaniMenuRef}
-                riceMenuRef={riceMenuRef}
-                pastaMenuRef={pastaMenuRef}
-                juiceMenuRef={juiceMenuRef}
-                shakesMenuRef={shakesMenuRef}
               />
             </div>
           )}
@@ -162,6 +166,9 @@ const Menu = () => {
 
           <div className="section text" id="juice" ref={juiceRef}>
             <Juice />
+          </div>
+          <div className="section text" id="beverage" ref={beverageRef}>
+            <Beverage />
           </div>
         </div>
 

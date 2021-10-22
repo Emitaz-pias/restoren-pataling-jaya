@@ -5,3 +5,9 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+.categoryBtn {
+  width: 3.813;
+  height: 4.438;
+  box-shadow: 5px 5px 5px rgb(255, 68, 68);
+}

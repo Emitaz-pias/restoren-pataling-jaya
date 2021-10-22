@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Category.css";
 import "react-multi-carousel/lib/styles.css";
 const Category = ({
@@ -9,52 +9,17 @@ const Category = ({
   juiceRef,
   riceRef,
   pastaRef,
+  beverageRef,
   headerRef,
   scrollTo,
 }) => {
-  let oldScrollY;
-  const detectScrollDirection = () => {
-    if (oldScrollY > window.scrollY) {
-      if (visibleSection === "pizza") {
-        const doc = document.getElementById("navBar");
-        doc.scrollLeft -= 10;
-      }
-
-      if (visibleSection === "biriyani") {
-        const doc = document.getElementById("navBar");
-        doc.scrollLeft -= 20;
-      }
-
-      if (visibleSection === "pasta") {
-        const doc = document.getElementById("navBar");
-        doc.scrollLeft -= 20;
-      }
-    }
-    oldScrollY = window.scrollY;
-  };
-
-  window.addEventListener("scroll", detectScrollDirection);
-  if (visibleSection === "pizza") {
-    const doc = document.getElementById("navBar");
-    doc.scrollLeft += 10;
-  }
-
-  if (visibleSection === "biriyani") {
-    const doc = document.getElementById("navBar");
-    doc.scrollLeft += 20;
-  }
-
-  if (visibleSection === "pasta") {
-    const doc = document.getElementById("navBar");
-    doc.scrollLeft += 40;
-  }
   return (
     <nav id="navBar" className="navigationBar">
       <div className="d-flex" ref={headerRef}>
         <button
           type="button"
           className={`header_link ${
-            visibleSection === "burger" ? "selected" : ""
+            visibleSection === "burger" ? "selected" : "categoryBtn"
           }`}
           onClick={() => {
             scrollTo(burgerRef.current);
@@ -66,7 +31,7 @@ const Category = ({
           type="button"
           id="piasGi"
           className={`header_link ${
-            visibleSection === "pizza" ? "selected" : ""
+            visibleSection === "pizza" ? "selected" : "categoryBtn"
           }`}
           onClick={() => {
             scrollTo(pizzaRef.current);
@@ -121,13 +86,13 @@ const Category = ({
         <button
           type="button"
           className={`header_link ${
-            visibleSection === "juice" ? "selected" : ""
+            visibleSection === "beverage" ? "selected" : ""
           }`}
           onClick={() => {
-            scrollTo(juiceRef.current);
+            scrollTo(beverageRef.current);
           }}
         >
-          Shakes
+          Beverage
         </button>
         {/* <button
           type="button"

@@ -2,7 +2,7 @@ import React from "react";
 
 const Beverage = () => {
   return (
-    <div style={{ backgroundColor: "lightgray", height: "80vh" }}>Beverage</div>
+    <div style={{ backgroundColor: "green", height: "80vh" }}>Beverage</div>
   );
 };
 
