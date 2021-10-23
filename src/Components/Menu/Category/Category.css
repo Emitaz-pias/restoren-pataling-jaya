@@ -2,6 +2,11 @@
   list-style: none;
   overflow-x: scroll;
   position: sticky;
+  background-color: black;
+  border-radius: 15px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
 }
 ::-webkit-scrollbar {
   display: none;
