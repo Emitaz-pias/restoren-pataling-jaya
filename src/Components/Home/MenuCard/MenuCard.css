@@ -6,21 +6,18 @@
   padding: 0.1rem;
   width: 100%;
 }
-.cardImageDiv {
-  background-color: white;
-  border-radius: 15px;
-}
+
 .cardImage {
-  width: 15.813rem;
+  width: 13.813rem;
   height: 8.625rem;
   border-radius: 10px;
-  margin-left: 1%;
+  margin-left: 0.7rem;
 }
 .productDetails {
-  width: 100%;
+  width: 90%;
   text-align: start;
   margin-top: 15px;
-  margin-left: 10px;
+  margin-left: 7px;
 }
 .productName {
   font-family: Lato;
@@ -53,15 +50,15 @@
 withoud image card */
 
 .cardBodyWithoutImage {
-  margin: 0 0.2rem 0.1rem 0.2rem;
-  /* box-shadow: 2px 2px 2px lightgrey; */
+  margin: 0 0.5rem 1rem 0.7rem;
+  box-shadow: 2px 2px 2px lightgrey;
   border-radius: 10px;
   height: 5rem;
+  padding: 1rem;
 }
 .productDetailsOnlyText {
   text-align: start;
-  width: 80%;
 }
 .priceSeciton {
-  margin-right: 0.1rem;
+  margin-right: 1.5rem;
 }
