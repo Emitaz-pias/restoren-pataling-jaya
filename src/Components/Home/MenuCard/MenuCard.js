@@ -17,7 +17,8 @@ const MenuCard = ({
             src={productImage}
             alt="bbq chiken burger"
           />
-          <div className="productDetails ">
+
+          <div className="productDetails">
             <h3 className="productName">{productName}</h3>
             <p className="productDescription">{productDescription}</p>
             <div className="priceSeciton d-flex align-items-center">
@@ -29,18 +30,16 @@ const MenuCard = ({
           </div>
         </div>
       ) : (
-        <div className="cardBodyWithoutImage">
-          <div className="d-flex align-items-center">
-            <div className="">
-              <h3 className="productName">{productName}</h3>
-              <p className="productDescription">{productDescription}</p>
-            </div>
-            <div className="priceSeciton d-flex align-items-center justify-content-center ms-5 ">
-              <p className="productPrice">{productPrice}</p>
-              <p className="deletedPrice">
-                <del>{deletedPrice}</del>
-              </p>
-            </div>
+        <div className="cardBodyWithoutImage d-flex">
+          <div className="productDetailsOnlyText">
+            <h3 className="productName">{productName}</h3>
+            <p className="productDescription">{productDescription}</p>
+          </div>
+          <div className="priceSeciton w-25 d-flex align-items-center justify-content-center">
+            <p className="productPrice">{productPrice}</p>
+            <p className="deletedPrice">
+              <del>{deletedPrice}</del>
+            </p>
           </div>
         </div>
       )}

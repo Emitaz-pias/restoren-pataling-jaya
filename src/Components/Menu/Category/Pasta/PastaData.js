@@ -1,15 +1,16 @@
 import pastaPic from "../../../../images/pasta.png";
+import pataJpg from "../../../../images/pastajpg.jpg";
 export const pastaData = [
   {
     name: "Angel Hair Pasta",
-    image: pastaPic,
+    image: pataJpg,
     price: "RM.40",
     description: "chicken,BBQ sauce,tomato",
   },
 
   {
     name: "Bow Tie Pasta",
-    image: pastaPic,
+    image: pataJpg,
     price: "RM.130",
     description: "beef patty, BBQ sauce,",
   },
