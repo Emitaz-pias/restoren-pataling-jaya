@@ -5,6 +5,7 @@ import { pastaData } from "./PastaData";
 const Pasta = () => {
   return (
     <div>
+      <h1 className="text-center text-secondary">Pasta</h1>
       {pastaData.map((pasta) => (
         <MenuCard
           productImage={pasta.image}

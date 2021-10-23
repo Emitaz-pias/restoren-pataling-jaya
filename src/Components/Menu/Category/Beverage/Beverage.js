@@ -5,6 +5,7 @@ import { beverageData } from "./BeverageData";
 const Beverage = () => {
   return (
     <div>
+      <h1 className="text-center text-secondary">Beverage</h1>
       {beverageData.map((beverageData) => (
         <MenuCard
           productName={beverageData.name}

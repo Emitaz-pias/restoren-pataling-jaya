@@ -5,6 +5,7 @@ import { riceData } from "./RiceData";
 const Rice = () => {
   return (
     <div>
+      <h1 className="text-center text-secondary">Rice</h1>
       {riceData.map((rice) => (
         <MenuCard
           productName={rice.name}
