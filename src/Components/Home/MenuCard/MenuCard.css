@@ -14,6 +14,7 @@
   width: 15.813rem;
   height: 8.625rem;
   border-radius: 10px;
+  margin-left: 1%;
 }
 .productDetails {
   width: 100%;
@@ -25,17 +26,20 @@
   font-family: Lato;
   font-weight: 400;
   margin-bottom: 0.3rem;
+  font-size: 1.063rem;
 }
 .productDescription {
   font-family: Roboto;
   font-weight: 300;
   color: #777777;
   margin: 0;
+  font-size: 0.75rem;
 }
 .productPrice {
   font-family: Roboto;
   font-weight: 500;
   color: #757575;
+  font-size: 0.875rem;
 }
 .deletedPrice {
   font-family: Lato;
