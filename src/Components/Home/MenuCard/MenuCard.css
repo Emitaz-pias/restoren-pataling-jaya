@@ -24,6 +24,7 @@
   font-weight: 400;
   margin-bottom: 0.3rem;
   font-size: 1.063rem;
+  font-family: "Bebas Neue";
 }
 .productDescription {
   font-family: Roboto;
@@ -31,19 +32,14 @@
   color: #777777;
   margin: 0;
   font-size: 0.75rem;
+  font-family: "Bebas Neue";
 }
 .productPrice {
   font-family: Roboto;
   font-weight: 500;
   color: #757575;
-  font-size: 0.875rem;
-}
-.deletedPrice {
-  font-family: Lato;
-  font-weight: 300;
-  color: #757575;
-  margin-left: 1rem;
-  margin-bottom: 1.1rem;
+  font-size: 1.1rem;
+  font-family: "Bebas Neue";
 }
 
 /* 
@@ -61,4 +57,10 @@ withoud image card */
 }
 .priceSeciton {
   margin-right: 1.5rem;
+}
+.categoryHeader {
+  font-family: "Righteous";
+  text-align: start;
+  margin-left: 0.8rem;
+  margin-top: 2rem;
 }

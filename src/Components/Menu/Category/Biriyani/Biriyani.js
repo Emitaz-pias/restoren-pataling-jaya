@@ -5,7 +5,7 @@ import { biriyaniData } from "./BiriyaniData";
 const Biriyani = () => {
   return (
     <div>
-      <h1 className="text-center text-secondary">Biriyani</h1>
+      <h1 className="text-secondary categoryHeader">Biriyani</h1>
       {biriyaniData.map((biriyani) => (
         <MenuCard
           productName={biriyani.name}

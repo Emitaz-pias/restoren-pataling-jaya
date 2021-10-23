@@ -6,7 +6,6 @@ const MenuCard = ({
   productImage,
   productPrice,
   productDescription,
-  deletedPrice,
 }) => {
   return (
     <div>
@@ -21,12 +20,7 @@ const MenuCard = ({
           <div className="productDetails">
             <h3 className="productName">{productName}</h3>
             <p className="productDescription">{productDescription}</p>
-            <div className="priceSeciton d-flex align-items-center">
-              <p className="productPrice">{productPrice}</p>
-              <p className="deletedPrice">
-                <del>{deletedPrice}</del>
-              </p>
-            </div>
+            <p className="productPrice">{productPrice}</p>
           </div>
         </div>
       ) : (
@@ -35,12 +29,8 @@ const MenuCard = ({
             <h3 className="productName">{productName}</h3>
             <p className="productDescription">{productDescription}</p>
           </div>
-          <div className="priceSeciton w-25 d-flex align-items-center">
-            <p className="productPrice">{productPrice}</p>
-            <p className="deletedPrice">
-              <del>{deletedPrice}</del>
-            </p>
-          </div>
+
+          <p className="productPrice">{productPrice}</p>
         </div>
       )}
     </div>

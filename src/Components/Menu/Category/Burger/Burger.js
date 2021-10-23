@@ -6,7 +6,7 @@ import { burgerData } from "./BurgerData";
 const Burger = () => {
   return (
     <section className="burgers">
-      <h1 className="text-center text-secondary">Burger</h1>
+      <h1 className=" text-secondary categoryHeader">Burger</h1>
       {burgerData.map((burger) => (
         <MenuCard
           productImage={burger.image}
