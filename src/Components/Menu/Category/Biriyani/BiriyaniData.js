@@ -1,4 +1,4 @@
-import kacchiBiriyani from "../../../../images/biriyani.png";
+import kacchiBiriyani from "../../../../images/biriyanijpg.jpg";
 export const biriyaniData = [
   {
     name: "Hyderabadi Biryani",

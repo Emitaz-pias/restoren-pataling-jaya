@@ -1,4 +1,3 @@
-import ricePic from "../../../../images/rice.png";
 import riceJpg from "../../../../images/ricejpg.jpg";
 
 export const riceData = [
@@ -30,7 +29,7 @@ export const riceData = [
   },
   {
     name: "Blue rice",
-    image: ricePic,
+    image: riceJpg,
     price: "RM.15",
     deletedPrice: "RM.20",
     description: "cheese,Naga",

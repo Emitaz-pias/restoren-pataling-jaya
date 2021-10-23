@@ -1,4 +1,4 @@
-import firstPizza from "../../../../images/pizza.png";
+import firstPizza from "../../../../images/piazzajpg.jpg";
 export const pizzaData = [
   {
     name: "Chicken Pizza",
