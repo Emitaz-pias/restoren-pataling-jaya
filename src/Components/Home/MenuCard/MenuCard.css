@@ -23,7 +23,7 @@
   font-family: Lato;
   font-weight: 400;
   margin-bottom: 0.3rem;
-  font-size: 1.063rem;
+  font-size: 1.4rem;
   font-family: "Bebas Neue";
 }
 .productDescription {
@@ -31,14 +31,14 @@
   font-weight: 300;
   color: #777777;
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 .productPrice {
   font-family: Roboto;
   font-weight: 500;
   /* color: #757575; */
   color: red;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-family: "Bebas Neue";
 }
 
@@ -46,8 +46,9 @@
 withoud image card */
 
 .cardBodyWithoutImage {
-  margin: 0 0.5rem 1rem 0.7rem;
-  box-shadow: 5px 5px 10px lightgrey;
+  margin: 1rem 0.5rem 1rem 0.7rem;
+  box-shadow: 15px 5px 10px lightgrey, 5px 5px 10px lightgrey,
+    5px 5px 10px lightgrey, 5px 5px 10px lightgrey;
   border-radius: 10px;
   height: 5rem;
   padding: 1rem;
