@@ -3,26 +3,26 @@ export const beverageData = [
   {
     name: "Special Juice",
     image: beverageGlass,
-    price: "RM.40",
+    price: "RM40.00",
     description: "chicken,BBQ sauce,tomato",
   },
 
   {
     name: "Special Juice",
     image: beverageGlass,
-    price: "RM.130",
+    price: "RM130.00",
     description: "beef patty, BBQ sauce,",
   },
   {
     name: "Special Juice",
-    price: "RM.150",
-    deletedPrice: "RM.200",
+    price: "RM150.00",
+    deletedPrice: "RM200.50",
     description: "cheese,Naga",
   },
   {
     name: "Special Juice",
     image: beverageGlass,
-    price: "RM.15",
+    price: "RM15.00",
     deletedPrice: "RM.200",
     description: "cheese,Naga",
   },

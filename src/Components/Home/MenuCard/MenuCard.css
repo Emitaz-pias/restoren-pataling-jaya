@@ -40,23 +40,33 @@
   color: red;
   font-size: 1.4rem;
   font-family: "Bebas Neue";
+  margin-left: 3rem;
 }
 
 /* 
-withoud image card */
+withoud image product card */
 
 .cardBodyWithoutImage {
   margin: 1rem 0.5rem 1rem 0.7rem;
   border: 2px solid rgb(213, 213, 213);
   border-radius: 10px;
   height: 5rem;
-  padding: 1rem;
+  padding: 1%;
 }
 .productDetailsOnlyText {
   text-align: start;
+  margin-left: 0.5rem;
+  width: 20rem;
 }
-.priceSeciton {
-  margin-right: 1.5rem;
+.priceSection {
+  font-family: Roboto;
+  font-weight: 500;
+  /* color: #757575; */
+  color: red;
+  font-size: 1.4rem;
+  font-family: "Bebas Neue";
+  padding-left: 28%;
+  margin-top: 5%;
 }
 .categoryHeader {
   font-family: "Righteous";

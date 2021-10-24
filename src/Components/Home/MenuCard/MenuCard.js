@@ -24,13 +24,12 @@ const MenuCard = ({
           </div>
         </div>
       ) : (
-        <div className="cardBodyWithoutImage d-flex align-items-center justify-content-evenly">
+        <div className="cardBodyWithoutImage d-flex align-items-center">
           <div className="productDetailsOnlyText">
             <h3 className="productName">{productName}</h3>
             <p className="productDescription">{productDescription}</p>
           </div>
-
-          <p className="productPrice">{productPrice}</p>
+          <p className="priceSection">{productPrice}</p>
         </div>
       )}
     </div>

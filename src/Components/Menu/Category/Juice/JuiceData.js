@@ -3,7 +3,7 @@ export const juiceData = [
   {
     name: "Apple juice",
     image: juicePic,
-    price: "RM.40",
+    price: "RM40.00",
     description:
       "Fresh apple apple apple apple apple apple apple apple apple apple apple apple apple apple",
   },
@@ -11,26 +11,26 @@ export const juiceData = [
   {
     name: "Beet juice",
     image: juicePic,
-    price: "RM.130",
+    price: "RM130.00",
     description: "Rotten beet",
   },
   {
     name: "Cantaloupe juice",
-    price: "RM.150",
+    price: "RM150.50",
     deletedPrice: "RM.200",
     description: "cheese,Naga",
   },
   {
     name: "Corollar Juice",
     image: juicePic,
-    price: "RM.15",
+    price: "RM15.00",
     deletedPrice: "RM.200",
     description: "cheese,Naga",
   },
   {
     name: "Mular Juice",
     image: juicePic,
-    price: "RM.15",
+    price: "RM15.00",
     deletedPrice: "RM.20",
     description: "cheese,Naga",
   },

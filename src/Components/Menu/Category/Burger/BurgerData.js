@@ -3,33 +3,33 @@ export const burgerData = [
   {
     name: "BBQ Chicken Burger",
     image: burgerJpg,
-    price: "RM.12",
+    price: "RM12.00",
     description: "chicken patty,BBQ sauce,tomato",
   },
 
   {
     name: "BBQ Beef Burger",
     image: burgerJpg,
-    price: "RM.13",
+    price: "RM13.00",
     description: "beef patty, BBQ sauce,",
   },
   {
     name: "Chicken Naga Burger",
-    price: "RM.15",
+    price: "RM150.00",
     deletedPrice: "RM.20",
     description: "cheese,Naga",
   },
   {
     name: "Chicken Naga Burger",
     image: burgerJpg,
-    price: "RM.15",
+    price: "RM15.40",
     deletedPrice: "RM.20",
     description: "cheese,Naga",
   },
   {
     name: "Chicken Naga Burger",
     image: burgerJpg,
-    price: "RM.15",
+    price: "RM150.40",
     deletedPrice: "RM.20",
     description: "cheese,Naga",
   },

@@ -3,33 +3,33 @@ export const biriyaniData = [
   {
     name: "Hyderabadi Biryani",
     image: kacchiBiriyani,
-    price: "RM.40",
+    price: "RM40.00",
     description: "chicken,BBQ sauce,tomato",
   },
 
   {
     name: "Keema Biryani",
     image: kacchiBiriyani,
-    price: "RM.130",
+    price: "RM130.10",
     description: "beef patty, BBQ sauce,",
   },
   {
     name: "Awadhi Mutton Biryani",
-    price: "RM.150",
+    price: "RM15.00",
     deletedPrice: "RM.200",
     description: "cheese,Naga",
   },
   {
     name: "Chicken Reshmi Biryani",
     image: kacchiBiriyani,
-    price: "RM.15",
+    price: "RM15.00",
     deletedPrice: "RM.200",
     description: "cheese,Naga",
   },
   {
     name: "Makhni Paneer Biryani",
     image: kacchiBiriyani,
-    price: "RM.15",
+    price: "RM15.50",
     deletedPrice: "RM.20",
     description: "cheese,Naga",
   },
