@@ -80,7 +80,7 @@ const Menu = () => {
 
         if (visibleSection === "biriyani") {
           const doc = document.getElementById("navBar");
-          doc.scrollLeft -= 30;
+          doc.scrollLeft -= 40;
         }
 
         if (visibleSection === "pasta") {
@@ -102,7 +102,7 @@ const Menu = () => {
 
     if (visibleSection === "pasta") {
       const doc = document.getElementById("navBar");
-      doc.scrollLeft += 70;
+      doc.scrollLeft += 90;
     }
     handleScroll();
     window.addEventListener("scroll", handleScroll);
