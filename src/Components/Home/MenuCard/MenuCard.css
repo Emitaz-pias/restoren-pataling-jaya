@@ -56,7 +56,7 @@ withoud image product card */
 .productDetailsOnlyText {
   text-align: start;
   margin-left: 0.5rem;
-  width: 20rem;
+  width: 19rem;
 }
 .priceSection {
   font-family: Roboto;
@@ -65,7 +65,7 @@ withoud image product card */
   color: red;
   font-size: 1.4rem;
   font-family: "Bebas Neue";
-  padding-left: 28%;
+  padding-left: 24%;
   margin-top: 5%;
 }
 .categoryHeader {
