@@ -1,3 +1,13 @@
+.navigationBarTop {
+  list-style: none;
+  overflow-x: scroll;
+  position: sticky;
+  background-color: white;
+  border-radius: 15px;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+}
 .navigationBar {
   list-style: none;
   overflow-x: scroll;
@@ -21,4 +31,14 @@
 .categoryBtn:hover {
   background-color: white;
   color: black;
+}
+.categoryBtnTop {
+  border-radius: 10px;
+  margin: 0.1rem;
+  background-color: white;
+  color: black;
+}
+.categoryBtnTop:hover {
+  background-color: black;
+  color: white;
 }

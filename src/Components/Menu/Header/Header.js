@@ -135,6 +135,7 @@ const Header = ({
         biriyaniRef={biriyaniRef}
         beverageRef={beverageRef}
         scrollTo={scrollTo}
+        showHeader={showHeader}
       />
     </div>
   );
