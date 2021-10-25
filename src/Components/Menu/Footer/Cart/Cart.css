@@ -1,0 +1,28 @@
+.cartContainer {
+  background-color: white;
+  border-top: 2px solid #ddd7d7;
+  position: fixed;
+  top: 55%;
+  width: 100%;
+  height: 7rem;
+}
+.cartBody {
+  background-color: black;
+  height: 4rem;
+  margin-top: 0.6rem;
+  border-radius: 10px;
+  margin-left: 2%;
+  margin-right: 2%;
+  color: white;
+  width: 96%;
+  z-index: -1;
+}
+.cartButton {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+.cartButton:hover {
+  color: white;
+  font-weight: 600;
+}

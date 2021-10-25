@@ -10,6 +10,7 @@ import Pizza from "../Menu/Category/Pizza/Pizza";
 import Rice from "../Menu/Category/Rice/Rice";
 import Category from "./Category/Category";
 import Header from "./Header/Header";
+import Cart from "./Footer/Cart/Cart";
 
 const getDimensions = (ele) => {
   const { height } = ele.getBoundingClientRect();
@@ -115,8 +116,6 @@ const Menu = () => {
     <div>
       <Slider></Slider>
       <div>
-        <div className="top-spacer" />
-
         <div className="content">
           {window.scrollY > 360 ? (
             <Header
@@ -171,9 +170,9 @@ const Menu = () => {
             <Beverage />
           </div>
         </div>
-
         <div className="bottom-spacer" />
       </div>
+      <Cart />
     </div>
   );
 };
