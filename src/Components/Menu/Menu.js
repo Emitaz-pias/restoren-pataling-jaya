@@ -172,7 +172,7 @@ const Menu = () => {
         </div>
         <div className="bottom-spacer" />
       </div>
-      <Cart />
+      {window.scrollY > 370 && <Cart />}
     </div>
   );
 };
