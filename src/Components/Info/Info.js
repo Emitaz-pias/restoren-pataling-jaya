@@ -76,7 +76,7 @@ const Info = () => {
           {" "}
           <img src={faceBookLogo} alt="fb logo" />
         </a>
-        <a href="/">
+        <a href="https://www.instagram.com/srbistro17">
           {" "}
           <img src={instragramLogo} alt="instragram logo" />
         </a>
