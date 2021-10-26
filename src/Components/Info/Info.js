@@ -69,7 +69,7 @@ const Info = () => {
         <h5>here will be our map</h5>{" "}
       </div>
       <div className="footerLinks d-flex justify-content-center">
-        <a href="/">
+        <a href="https://wa.me/01798473151">
           <img src={whatsappLogo} alt="whatsapp loogo" />
         </a>
         <a href="https://www.facebook.com/srbistro17">
