@@ -72,7 +72,7 @@ const Info = () => {
         <a href="/">
           <img src={whatsappLogo} alt="whatsapp loogo" />
         </a>
-        <a href="/">
+        <a href="https://www.facebook.com/srbistro17">
           {" "}
           <img src={faceBookLogo} alt="fb logo" />
         </a>
