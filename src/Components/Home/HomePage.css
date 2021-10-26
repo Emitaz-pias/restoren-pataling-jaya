@@ -80,10 +80,12 @@
   padding: 0.813rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  cursor: pointer;
 }
 .box:hover {
   background-color: black;
   color: white;
+  cursor: pointer;
 }
 .active {
   background-color: black;
