@@ -1,0 +1,34 @@
+.productCard {
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+.mainImg {
+  width: 100%;
+}
+.arrowBtn {
+  position: absolute;
+  top: 1rem;
+  z-index: 1;
+  color: rgb(147, 141, 141);
+  margin-left: 1rem;
+}
+.descriptions {
+  text-align: start;
+  margin-left: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+.orderTypeSection {
+  background-color: white;
+  margin-top: 1rem;
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 5px;
+  height: 7.5rem;
+  margin-bottom: 1rem;
+}
+
+.customRadioStyles {
+  cursor: pointer;
+}

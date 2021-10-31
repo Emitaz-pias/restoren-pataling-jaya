@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Menu.css";
 import Slider from "./Slider/Slider";
 import Beverage from "../Menu/Category/Beverage/Beverage";
@@ -23,7 +23,6 @@ const getDimensions = (ele) => {
     offsetBottom,
   };
 };
-
 const scrollTo = (ele) => {
   ele.scrollIntoView({
     behavior: "smooth",
@@ -57,6 +56,7 @@ const Menu = () => {
     const handleScroll = () => {
       const { height: headerHeight } = getDimensions(headerRef.current);
       const scrollPosition = window.scrollY + headerHeight;
+
       const selected = sectionRefs.find(({ section, ref }) => {
         const ele = ref.current;
 
@@ -91,6 +91,8 @@ const Menu = () => {
       }
       oldScrollY = window.scrollY;
     };
+
+    // header category scroll
     if (visibleSection === "pizza") {
       const doc = document.getElementById("navBar");
       doc.scrollLeft += 10;

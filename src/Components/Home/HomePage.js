@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./HomePage.css";
 import srLogo from "../../images/244087189_592638525096104_656116708744791639_n (1).jpg";
 import homeBanner from "../../images/homeBanner.jpg";
@@ -115,6 +115,7 @@ const HomePage = () => {
               </h5>
             </div>
           </div>
+
           {selectedDiv === "menuDiv" && <Menu />}
           {selectedDiv === "reviewDiv" && <Review />}
           {selectedDiv === "infoDiv" && <Info />}

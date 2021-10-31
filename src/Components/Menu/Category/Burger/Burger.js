@@ -8,13 +8,15 @@ const Burger = () => {
     <section className="burgers">
       <h1 className=" text-secondary categoryHeader">Burger</h1>
       {burgerData.map((burger) => (
-        <MenuCard
-          productImage={burger.image}
-          productName={burger.name}
-          productDescription={burger.description}
-          productPrice={burger.price}
-          deletedPrice={burger.deletedPrice}
-        />
+        <div>
+          <MenuCard
+            productImage={burger.image}
+            productName={burger.name}
+            productDescription={burger.description}
+            productPrice={burger.price}
+            deletedPrice={burger.deletedPrice}
+          />
+        </div>
       ))}
     </section>
   );
