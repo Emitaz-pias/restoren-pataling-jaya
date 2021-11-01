@@ -1,0 +1,24 @@
+.remarksContainer {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 2%;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  text-align: start;
+  padding: 0.5em;
+  padding-bottom: 1rem;
+}
+.remarkText {
+  margin-top: 1.5em;
+  padding: 1rem;
+  border: none;
+  width: 100%;
+  outline-style: solid;
+  outline-color: rgb(209, 220, 220);
+}
+input::placeholder {
+  position: relative;
+  top: 30px;
+  color: red;
+  margin-left: 2rem;
+}

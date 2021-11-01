@@ -13,7 +13,10 @@ const MenuCard = ({
   return (
     <div>
       {productImage ? (
-        <Link to="/product">
+        <Link
+          style={{ textDecoration: "none", color: "inherit" }}
+          to="/product"
+        >
           <div className="cardBody d-flex align-items-center">
             <img
               className="cardImage"

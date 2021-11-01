@@ -1,8 +1,12 @@
-.ingredients {
+.ingredientsContainer {
   margin-left: 2%;
   margin-right: 2%;
   background-color: #f9f9f9;
   border-radius: 5px;
   text-align: start;
   padding: 0.5em;
+}
+.hrline {
+  position: relative;
+  bottom: 1.4rem;
 }

@@ -7,6 +7,8 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Ingredients from "../Ingredients/Ingredients";
 import AddOn from "../AddOn/AddOn";
 import Remarks from "../Remarks/Remarks";
+import Quantity from "../Quantity/Quantity";
+import { Link } from "react-router-dom";
 
 const ProductDetails = () => {
   // const { productSelection } = useContext(ProductsContext);
@@ -26,11 +28,20 @@ const ProductDetails = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "rgb(215,211,211)" }}>
+    <div style={{ backgroundColor: "#D7D3D3" }}>
       <div className="productCard">
         <img className="mainImg" src={BurgerPic} alt="" />
         <p className="arrowBtn">
-          <FontAwesomeIcon size="3x" icon={faArrowLeft} />
+          <Link
+            style={{
+              textDecoration: "none",
+              color: "#D7D3D3",
+            }}
+            to="/"
+          >
+            {" "}
+            <FontAwesomeIcon size="3x" icon={faArrowLeft} />
+          </Link>
         </p>
         <p className="descriptions">
           <h2 className="mt-2 mb-3">Best Biriyani</h2>
@@ -79,6 +90,7 @@ const ProductDetails = () => {
           <Ingredients />
           <AddOn />
           <Remarks />
+          <Quantity />
         </div>
       ) : null}
     </div>
