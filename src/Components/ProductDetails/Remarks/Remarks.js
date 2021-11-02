@@ -5,7 +5,7 @@ const Remarks = () => {
   return (
     <div className="remarksContainer">
       <div className="d-flex justify-content-between align-items-center">
-        <h4>Remark</h4>
+        <h6>Remark</h6>
         <small className="text-secondary">(optional)</small>
       </div>
       <input
