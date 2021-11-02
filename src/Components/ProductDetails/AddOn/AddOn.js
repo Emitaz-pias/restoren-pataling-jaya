@@ -7,7 +7,7 @@ const AddOn = () => {
       <div className="d-flex justify-content-between align-items-center">
         <div>
           {/* <p>please choose </p> */}
-          <h5>Select up to 4 Add on</h5>
+          <p className="text-secondary">Select up to 4 Add on</p>
         </div>
         <p className="text-secondary">(optional)</p>
       </div>
