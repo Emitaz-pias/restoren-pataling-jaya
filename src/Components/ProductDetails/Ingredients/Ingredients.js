@@ -4,10 +4,10 @@ import "./Ingredients.css";
 const Ingredients = () => {
   return (
     <div className="ingredientsContainer">
-      <div className="d-flex justify-content-between align-items-center">
+      {/* <div className="d-flex justify-content-between align-items-center">
         <p>please choose </p>
         <p className="text-danger">*(required)</p>
-      </div>
+      </div> */}
       <div className="ingredients">
         <div className="d-flex justify-content-between">
           <div class="form-check">

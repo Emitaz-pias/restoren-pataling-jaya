@@ -9,15 +9,16 @@ import AddOn from "../AddOn/AddOn";
 import Remarks from "../Remarks/Remarks";
 import Quantity from "../Quantity/Quantity";
 import { Link } from "react-router-dom";
+import Cart from "../../Menu/Footer/Cart/Cart";
 
 const ProductDetails = () => {
   // const { productSelection } = useContext(ProductsContext);
   // const [sectedProduct, setSeletedProduct] = productSelection;
   const [getOrderType, setGetOrderType] = useState("");
   const [showIngredient, setShowIngredient] = useState(false);
-  const [showAddOn, setShowAddOn] = useState(false);
-  const [showRemarks, setShowRemarks] = useState(false);
-  const [showReview, setShowReview] = useState(false);
+  // const [showAddOn, setShowAddOn] = useState(false);
+  // const [showRemarks, setShowRemarks] = useState(false);
+  // const [showReview, setShowReview] = useState(false);
 
   // console.log(sectedProduct);
   const handleTakeOut = () => {
@@ -27,6 +28,9 @@ const ProductDetails = () => {
     setShowIngredient(true);
   };
 
+  const handleDineIn = () => {
+    setShowIngredient(true);
+  };
   return (
     <div style={{ backgroundColor: "#D7D3D3" }}>
       <div className="productCard">
@@ -61,6 +65,20 @@ const ProductDetails = () => {
               name="flexRadioDefault"
               id="flexRadioDefault1"
               onChange={(e) => {
+                handleDineIn(e.target.value);
+              }}
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              Dine-In
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input customRadioStyles"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              onChange={(e) => {
                 handleTakeOut(e.target.value);
               }}
             />
@@ -85,6 +103,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+
       {showIngredient ? (
         <div>
           <Ingredients />
@@ -93,6 +112,9 @@ const ProductDetails = () => {
           <Quantity />
         </div>
       ) : null}
+      <div className="mt-5">
+        <Cart />
+      </div>
     </div>
   );
 };
