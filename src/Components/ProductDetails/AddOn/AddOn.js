@@ -27,7 +27,7 @@ const AddOn = ({ addOns }) => {
             <div className="d-flex justify-content-between" key={index}>
               <div>
                 <input
-                  {...register("IngredientsOptions", { required: true })}
+                  {...register("addonsOptions", { required: true })}
                   type="checkbox"
                   onChange={(e) => handleSubmit(onSubmit(e.target.value))}
                   value={addOn.name}
