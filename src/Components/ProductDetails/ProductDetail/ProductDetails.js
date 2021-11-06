@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { ProductsContext } from "../../../App";
 import "./ProductDetails.css";
-import BurgerPic from "../../../images/burger2.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Ingredients from "../Ingredients/Ingredients";
@@ -22,17 +21,6 @@ const ProductDetails = () => {
   // const [showReview, setShowReview] = useState(false);
 
   console.log("our selected product", sectedProduct);
-  const handleTakeOut = () => {
-    setShowIngredient(true);
-  };
-  const handleDeliver = () => {
-    setShowIngredient(true);
-  };
-
-  const handleDineIn = () => {
-    setShowIngredient(true);
-  };
-
   const {
     register,
     handleSubmit,
@@ -98,7 +86,7 @@ const ProductDetails = () => {
               type="radio"
               onChange={(e) => handleSubmit(onSubmit(e.target.value))}
               value="Deliver"
-              id="Deliver"
+              id="Delivery"
               class="form-check-input customRadioStyles"
             />
             <label class="form-check-label" for="Delivery">

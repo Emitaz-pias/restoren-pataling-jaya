@@ -1,92 +1,44 @@
 import React from "react";
 import "./Ingredients.css";
+import { useForm } from "react-hook-form";
 
 const Ingredients = ({ ingredients }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    // post to our order object the data
+  };
   return (
     <div className="ingredientsContainer">
-      {ingredients.map((ingredient, index) => (
-        <div key={index} className="ingredients">
-          <div className="d-flex justify-content-between">
-            <div class="form-check">
-              <input
-                class="form-check-input customRadioStyles"
-                type="radio"
-                name={ingredient}
-                id={ingredient}
-                onChange={(e) => {}}
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                {ingredient}
-              </label>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {ingredients.map((ingredient, index) => (
+          <div>
+            <div className="d-flex justify-content-between" key={index}>
+              <div>
+                <input
+                  {...register("IngredientsOptions", { required: true })}
+                  type="radio"
+                  onChange={(e) => handleSubmit(onSubmit(e.target.value))}
+                  value={ingredient}
+                  id={ingredient}
+                  class="form-check-input customRadioStyles"
+                />
+                <label class="form-check-label" for={ingredient}>
+                  {ingredient}
+                </label>
+              </div>
+              <p className="">
+                <span className="ms-5 ">+RM.00/each</span>
+              </p>
             </div>
-            <p className="">
-              <span className="ps-5">+RM0.00</span>
-            </p>
+            <hr className="hrline" />
           </div>
-          <hr className="hrline" />
-        </div>
-      ))}
-
-      {/* <div className="ingredients">
-        <div className="d-flex justify-content-between">
-          <div class="form-check">
-            <input
-              class="form-check-input customRadioStyles"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              onChange={(e) => {}}
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Daging
-            </label>
-          </div>
-          <p className="ms-5 ps-5">
-            <span className="ms-5 ps-5">+RM0.00</span>
-          </p>
-        </div>
-        <hr className="hrline" />
-      </div> */}
-      {/* <div className="ingredients">
-        <div className="d-flex justify-content-between">
-          <div class="form-check">
-            <input
-              class="form-check-input customRadioStyles"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              onChange={(e) => {}}
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Udang
-            </label>
-          </div>
-          <p className="ms-5 ps-5">
-            <span className="ms-5 ps-5">+RM0.00</span>
-          </p>
-        </div>
-        <hr className="hrline" />
-      </div> */}
-      {/* <div className="ingredients">
-        <div className="d-flex justify-content-between">
-          <div class="form-check">
-            <input
-              class="form-check-input customRadioStyles"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              onChange={(e) => {}}
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Sotong
-            </label>
-          </div>
-          <p className="ms-5 ps-5">
-            <span className="ms-5 ps-5">+RM0.00</span>
-          </p>
-        </div>
-        <hr className="hrline" />
-      </div> */}
+        ))}
+      </form>
     </div>
   );
 };
