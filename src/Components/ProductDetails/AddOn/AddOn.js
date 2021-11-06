@@ -1,7 +1,17 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import "./AddOn.css";
 
 const AddOn = ({ addOns }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    // post to our order object the data
+  };
   return (
     <div className="addOnContainer">
       <div className="d-flex justify-content-between align-items-center">
@@ -11,7 +21,32 @@ const AddOn = ({ addOns }) => {
         </div>
         <p className="text-secondary">(optional)</p>
       </div>
-      {addOns.map((addOn, index) => (
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {addOns.map((addOn, index) => (
+          <div>
+            <div className="d-flex justify-content-between" key={index}>
+              <div>
+                <input
+                  {...register("IngredientsOptions", { required: true })}
+                  type="checkbox"
+                  onChange={(e) => handleSubmit(onSubmit(e.target.value))}
+                  value={addOn.name}
+                  id={addOn.name}
+                  class="form-check-input customRadioStyles"
+                />
+                <label class="form-check-label" for={addOn.name}>
+                  {addOn.name}
+                </label>
+              </div>
+              <p className="">
+                <span className="ms-5 ">+{addOn.price}/each</span>
+              </p>
+            </div>
+            <hr className="hrline" />
+          </div>
+        ))}
+      </form>
+      {/* {addOns.map((addOn, index) => (
         <div key={index} className="addon mt-3">
           <div className="d-flex justify-content-between">
             <div class="form-check">
@@ -32,7 +67,7 @@ const AddOn = ({ addOns }) => {
           </div>
           <hr className="hrline" />
         </div>
-      ))}
+      ))} */}
       {/* <div className="addon">
         <div className="d-flex justify-content-between">
           <div class="form-check">
