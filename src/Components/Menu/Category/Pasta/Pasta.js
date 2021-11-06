@@ -7,13 +7,7 @@ const Pasta = () => {
     <div>
       <h1 className=" text-secondary categoryHeader">Pasta</h1>
       {pastaData.map((pasta) => (
-        <MenuCard
-          productImage={pasta.image}
-          productName={pasta.name}
-          productDescription={pasta.description}
-          productPrice={pasta.price}
-          deletedPrice={pasta.deletedPrice}
-        />
+        <MenuCard productData={pasta} />
       ))}
     </div>
   );

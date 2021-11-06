@@ -7,13 +7,7 @@ const Rice = () => {
     <div>
       <h1 className="text-secondary categoryHeader">Rice</h1>
       {riceData.map((rice) => (
-        <MenuCard
-          productName={rice.name}
-          productDescription={rice.description}
-          productImage={rice.image}
-          productPrice={rice.price}
-          deletedPrice={rice.deletedPrice}
-        />
+        <MenuCard productData={rice} />
       ))}
     </div>
   );

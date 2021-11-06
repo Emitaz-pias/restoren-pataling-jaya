@@ -5,6 +5,11 @@ export const burgerData = [
     image: burgerJpg,
     price: "RM12.00",
     description: "chicken patty,BBQ sauce,tomato",
+    ingredients: ["Ninja Bun", "Sessame", "Letus", "Egyptian onion"],
+    addOns: [
+      { name: "Pink Salt", price: "RM.2.00" },
+      { name: "Ugandian Natural Letus", price: "RM.2.00" },
+    ],
   },
 
   {
@@ -12,6 +17,7 @@ export const burgerData = [
     image: burgerJpg,
     price: "RM13.00",
     description: "beef patty, BBQ sauce,",
+    ingredients: ["Letus", "Indian Onion", "Somthing really Big tasty"],
   },
   {
     name: "Chicken Naga Burger",

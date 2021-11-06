@@ -1,7 +1,7 @@
 import React from "react";
 import "./AddOn.css";
 
-const AddOn = () => {
+const AddOn = ({ addOns }) => {
   return (
     <div className="addOnContainer">
       <div className="d-flex justify-content-between align-items-center">
@@ -11,27 +11,29 @@ const AddOn = () => {
         </div>
         <p className="text-secondary">(optional)</p>
       </div>
-      <div className="addon mt-3">
-        <div className="d-flex justify-content-between">
-          <div class="form-check">
-            <input
-              class="form-check-input customRadioStyles"
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadioDefault1"
-              onChange={(e) => {}}
-            />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Nasi Putih
-            </label>
+      {addOns.map((addOn, index) => (
+        <div key={index} className="addon mt-3">
+          <div className="d-flex justify-content-between">
+            <div class="form-check">
+              <input
+                class="form-check-input customRadioStyles"
+                type="radio"
+                name={addOn.name}
+                id={addOn.name}
+                onChange={(e) => {}}
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                {addOn.name}
+              </label>
+            </div>
+            <p className="">
+              <span className="ms-5 ">+{addOn.price}/each</span>
+            </p>
           </div>
-          <p className="ms-5 ps-5">
-            <span className="ms-5 ">+RM2.50/each</span>
-          </p>
+          <hr className="hrline" />
         </div>
-        <hr className="hrline" />
-      </div>
-      <div className="addon">
+      ))}
+      {/* <div className="addon">
         <div className="d-flex justify-content-between">
           <div class="form-check">
             <input
@@ -50,8 +52,8 @@ const AddOn = () => {
           </p>
         </div>
         <hr className="hrline" />
-      </div>
-      <div className="addon">
+      </div> */}
+      {/* <div className="addon">
         <div className="d-flex justify-content-between">
           <div class="form-check">
             <input
@@ -70,8 +72,8 @@ const AddOn = () => {
           </p>
         </div>
         <hr className="hrline" />
-      </div>
-      <div className="addon">
+      </div> */}
+      {/* <div className="addon">
         <div className="d-flex justify-content-between">
           <div class="form-check">
             <input
@@ -90,7 +92,7 @@ const AddOn = () => {
           </p>
         </div>
         <hr className="hrline" />
-      </div>
+      </div> */}
     </div>
   );
 };

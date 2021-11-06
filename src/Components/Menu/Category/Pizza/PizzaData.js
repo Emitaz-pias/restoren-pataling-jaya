@@ -5,6 +5,11 @@ export const pizzaData = [
     image: firstPizza,
     price: "RM12.50",
     description: "chicken patty,BBQ sauce,tomato",
+    ingredients: ["BBQ sauce", "Anything", "Spirit "],
+    addOns: [
+      { name: "Tommato", price: "RM.5.00" },
+      { name: "Nijerian Pudina", price: "RM.2.00" },
+    ],
   },
   {
     name: "Kuchu puchu pizza",
@@ -12,6 +17,7 @@ export const pizzaData = [
     price: "RM150.00",
     deletedPrice: "RM 20",
     description: "cheese,Naga",
+    ingredients: ["Indian onion"],
   },
   {
     name: "BBQ Pizza",

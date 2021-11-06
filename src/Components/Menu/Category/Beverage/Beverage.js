@@ -7,13 +7,7 @@ const Beverage = () => {
     <div>
       <h1 className="text-secondary categoryHeader">Beverage</h1>
       {beverageData.map((beverageData) => (
-        <MenuCard
-          productName={beverageData.name}
-          productDescription={beverageData.description}
-          productPrice={beverageData.price}
-          productImage={beverageData.image}
-          deletedPrice={beverageData.deletedPrice}
-        />
+        <MenuCard productData={beverageData} />
       ))}
     </div>
   );
