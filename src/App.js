@@ -4,17 +4,23 @@ import HomePage from "./Components/Home/HomePage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LogIn from "./Components/Login/LogIn";
 import ProductDetails from "./Components/ProductDetails/ProductDetail/ProductDetails";
+import CartPage from "./Components/CartPage/CartPage";
 
 export const ProductsContext = createContext();
 function App() {
   const [showDetails, setShowDetails] = useState(false);
-  const [sectedProduct, setSeletedProduct] = useState({});
-  const [cartData, setCartData] = useState({});
+  const [selectedProduct, setSeletedProduct] = useState({});
+  const [indgredients, setIndgredients] = useState("");
+  const [deliveryOpiton, setDeliveryOpiton] = useState("");
+  const [cartData, setCartData] = useState([]);
+
   return (
     <ProductsContext.Provider
       value={{
         detailsPage: [showDetails, setShowDetails],
-        productSelection: [sectedProduct, setSeletedProduct],
+        productSelection: [selectedProduct, setSeletedProduct],
+        selectIngredients: [indgredients, setIndgredients],
+        selectDeliveryOption: [deliveryOpiton, setDeliveryOpiton],
         cart: [cartData, setCartData],
       }}
     >
@@ -28,6 +34,9 @@ function App() {
           </Route>
           <Route path="/product">
             <ProductDetails />
+          </Route>
+          <Route path="/cart">
+            <CartPage />
           </Route>
         </Switch>
       </Router>

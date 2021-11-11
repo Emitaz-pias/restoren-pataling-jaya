@@ -10,7 +10,6 @@ const MenuCard = ({ productData }) => {
 
   const handleSelectProduct = (selectedProduct) => {
     const product = selectedProduct;
-
     setSeletedProduct(product);
   };
 

@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Ingredients.css";
 import { useForm } from "react-hook-form";
+import { ProductsContext } from "../../../App";
 
 const Ingredients = ({ ingredients }) => {
+  const { cart, selectIngredients } = useContext(ProductsContext);
+  const [cartData, setCartData] = cart;
+  const [indgredients, setIndgredients] = selectIngredients;
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // const newCart = [...cartData, (cartData.ingredients = data)];
+    setIndgredients(data);
+    // setCartData(newCart);
     // post to our order object the data
   };
+  console.log(indgredients, "iscartData");
   return (
     <div className="ingredientsContainer">
       <form onSubmit={handleSubmit(onSubmit)}>
