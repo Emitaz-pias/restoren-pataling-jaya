@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import "./Ingredients.css";
 import { useForm } from "react-hook-form";
 import { ProductsContext } from "../../../App";
+import "./Ingredients.css";
 
 const Ingredients = ({ ingredients }) => {
   const { cart, selectIngredients } = useContext(ProductsContext);
@@ -32,9 +32,9 @@ const Ingredients = ({ ingredients }) => {
                   onChange={(e) => handleSubmit(onSubmit(e.target.value))}
                   value={ingredient}
                   id={ingredient}
-                  class="form-check-input customRadioStyles"
+                  className="form-check-input customRadioStyles"
                 />
-                <label class="form-check-label" for={ingredient}>
+                <label className="form-check-label" for={ingredient}>
                   {ingredient}
                 </label>
               </div>

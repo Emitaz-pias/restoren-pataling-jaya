@@ -3,14 +3,14 @@ import "./Quantity.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const Quantity = () => {
-  const [quantity, setQuantity] = useState(1);
+const Quantity = ({ quantityCart, setQuantityCart}) => {
+  
   const handleIncrementQty = () => {
-    setQuantity(quantity + 1);
+    setQuantityCart(quantityCart += 1);
   };
   const handleDecrementQty = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
+    if (quantityCart > 1) {
+      setQuantityCart(quantityCart -= 1);
     }
   };
   return (
@@ -20,7 +20,7 @@ const Quantity = () => {
         <span onClick={handleDecrementQty}>
           <FontAwesomeIcon icon={faMinus} />
         </span>
-        <span>{quantity}</span>
+        <span>{quantityCart}</span>
         <span onClick={handleIncrementQty}>
           <FontAwesomeIcon icon={faPlus} />
         </span>

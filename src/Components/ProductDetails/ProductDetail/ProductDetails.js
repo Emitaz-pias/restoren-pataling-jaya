@@ -1,32 +1,37 @@
-import React, { useContext, useState } from "react";
-import { ProductsContext } from "../../../App";
-import "./ProductDetails.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import Ingredients from "../Ingredients/Ingredients";
-import AddOn from "../AddOn/AddOn";
-import Remarks from "../Remarks/Remarks";
-import Quantity from "../Quantity/Quantity";
-import { Link } from "react-router-dom";
-import Cart from "../../Menu/Footer/Cart/Cart";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { ProductsContext } from "../../../App";
+import Cart from "../../Menu/Footer/Cart/Cart";
+import AddOn from "../AddOn/AddOn";
+import Ingredients from "../Ingredients/Ingredients";
+import Quantity from "../Quantity/Quantity";
+import Remarks from "../Remarks/Remarks";
+import "./ProductDetails.css";
 
 const ProductDetails = () => {
-  const { productSelection, cart, selectDeliveryOption } =
-    useContext(ProductsContext);
+  const { productSelection, cart, selectDeliveryOption, price } = useContext(ProductsContext);
+
   const [selectedProduct, setSeletedProduct] = productSelection;
   const [cartData, setCartData] = cart;
   const [showIngredient, setShowIngredient] = useState(false);
-  const [deliveryOpiton, setDeliveryOpiton] = selectDeliveryOption;
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const [deliveryOption, setDeliveryOption] = selectDeliveryOption;
+  const [totalPrice, setTotalPrice] = price;
+  const [quantityCart, setQuantityCart] = useState(1);
+
+
+  if (showIngredient === true) {
+    setTotalPrice(selectedProduct.price)
+  }
+
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    setDeliveryOpiton(data);
+    setDeliveryOption(data);
     setShowIngredient(true);
   };
+
   return (
     <div style={{ backgroundColor: "#D7D3D3" }}>
       <div className="productCard">
@@ -45,7 +50,7 @@ const ProductDetails = () => {
         </p>
         <p className="descriptions">
           <h2 className="mt-2 mb-3">{selectedProduct.name}</h2>
-          <h3 className="mt-3 mb-4 text-danger">{selectedProduct.price}</h3>
+          <h3 className="mt-3 mb-4 text-danger">RM{selectedProduct.price}</h3>
         </p>
       </div>
 
@@ -61,9 +66,9 @@ const ProductDetails = () => {
               onChange={(e) => handleSubmit(onSubmit(e.target.value))}
               value="Dine-In "
               id="DineIn"
-              class="form-check-input customRadioStyles"
+              className="form-check-input customRadioStyles"
             />
-            <label class="form-check-label" for="DineIn">
+            <label className="form-check-label" for="DineIn">
               Dine-In
             </label>
             <input
@@ -72,9 +77,9 @@ const ProductDetails = () => {
               onChange={(e) => handleSubmit(onSubmit(e.target.value))}
               value="Take Away "
               id="takeAway"
-              class="form-check-input customRadioStyles"
+              className="form-check-input customRadioStyles"
             />
-            <label class="form-check-label" for="takeAway">
+            <label className="form-check-label" for="takeAway">
               Take Away
             </label>
             <input
@@ -83,9 +88,9 @@ const ProductDetails = () => {
               onChange={(e) => handleSubmit(onSubmit(e.target.value))}
               value="Deliver"
               id="Delivery"
-              class="form-check-input customRadioStyles"
+              className="form-check-input customRadioStyles"
             />
-            <label class="form-check-label" for="Delivery">
+            <label className="form-check-label" for="Delivery">
               Delivery
             </label>
           </form>
@@ -98,15 +103,15 @@ const ProductDetails = () => {
             <Ingredients ingredients={selectedProduct.ingredients} />
           )}
           {selectedProduct.addOns !== undefined && (
-            <AddOn addOns={selectedProduct.addOns} />
+            <AddOn />
           )}
 
           <Remarks />
-          <Quantity />
+          <Quantity quantityCart={quantityCart} setQuantityCart={setQuantityCart} />
         </div>
       ) : null}
       <div className="mt-5">
-        <Cart />
+        <Cart showIngredient={showIngredient} quantityCart={quantityCart} />
       </div>
     </div>
   );
