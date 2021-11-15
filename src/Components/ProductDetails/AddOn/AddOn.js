@@ -41,7 +41,7 @@ const AddOn = () => {
   useEffect(() => {
     const getTotal = () => {
       const total = addOns.reduce((total, prd) => total + (parseInt(prd.price) * prd.quantity), 0);
-      setAddonsPrice(parseInt(totalPrice) + total)
+      setAddonsPrice((parseInt(totalPrice) + total))
     }
     getTotal()
 

@@ -1,17 +1,17 @@
 import { createContext, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import CartPage from "./Components/CartPage/CartPage";
 import HomePage from "./Components/Home/HomePage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LogIn from "./Components/Login/LogIn";
 import ProductDetails from "./Components/ProductDetails/ProductDetail/ProductDetails";
-import CartPage from "./Components/CartPage/CartPage";
 
 export const ProductsContext = createContext();
 function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [selectedProduct, setSeletedProduct] = useState({});
   const [indgredients, setIndgredients] = useState("");
-  const [deliveryOpiton, setDeliveryOpiton] = useState("");
+  const [deliveryOption, setDeliveryOption] = useState("");
   const [cartData, setCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [addonsPrice, setAddonsPrice] = useState(0)
@@ -22,7 +22,7 @@ function App() {
         detailsPage: [showDetails, setShowDetails],
         productSelection: [selectedProduct, setSeletedProduct],
         selectIngredients: [indgredients, setIndgredients],
-        selectDeliveryOption: [deliveryOpiton, setDeliveryOpiton],
+        selectDeliveryOption: [deliveryOption, setDeliveryOption],
         cart: [cartData, setCartData],
         price: [totalPrice, setTotalPrice],
         addonPrice: [addonsPrice, setAddonsPrice]

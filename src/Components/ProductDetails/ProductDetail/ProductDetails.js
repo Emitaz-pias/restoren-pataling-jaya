@@ -17,17 +17,18 @@ const ProductDetails = () => {
   const [selectedProduct, setSeletedProduct] = productSelection;
   const [cartData, setCartData] = cart;
   const [showIngredient, setShowIngredient] = useState(false);
-  const [deliveryOpiton, setDeliveryOpiton] = selectDeliveryOption;
+  const [deliveryOption, setDeliveryOption] = selectDeliveryOption;
   const [totalPrice, setTotalPrice] = price;
-  
+  const [quantityCart, setQuantityCart] = useState(1);
+
 
   if (showIngredient === true) {
     setTotalPrice(selectedProduct.price)
   }
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-    setDeliveryOpiton(data);
+    setDeliveryOption(data);
     setShowIngredient(true);
   };
 
@@ -106,11 +107,11 @@ const ProductDetails = () => {
           )}
 
           <Remarks />
-          <Quantity />
+          <Quantity quantityCart={quantityCart} setQuantityCart={setQuantityCart} />
         </div>
       ) : null}
       <div className="mt-5">
-        <Cart showIngredient={showIngredient} totalPrice={totalPrice} />
+        <Cart showIngredient={showIngredient} quantityCart={quantityCart} />
       </div>
     </div>
   );
