@@ -1,11 +1,10 @@
-import React, { useContext, useState, useEffect} from "react";
-import { Col, Row } from "react-bootstrap";
+import React, { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { ProductsContext } from "../../../App";
 import "./AddOn.css";
 
 const AddOn = () => {
-  const { productSelection, price, addonPrice} = useContext(ProductsContext);
+  const { productSelection, price, addonPrice } = useContext(ProductsContext);
   const [selectedProduct] = productSelection;
   const [addOns, setAddOns] = useState(selectedProduct.addOns);
   const [totalPrice] = price;
@@ -13,12 +12,36 @@ const AddOn = () => {
 
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (data) => {
-   // console.log(data);
-    // post to our order object the data
+  const onSubmit = (index, value) => {
+    
   };
+  useEffect(() => {
+    const getTotal = () => {
+      const total = addOns.reduce((total, prd) => total + (parseInt(prd.price) * prd.quantity), 0);
+      setAddonsPrice((parseInt(totalPrice) + total))
+    }
+    getTotal()
+
+  }, [addOns, totalPrice, setAddonsPrice])
   console.log(totalPrice, addonsPrice);
- 
+
+  const hiddenGame = (index, value) => {
+    console.log(index, value);
+    // post to our order object the data
+    const val = index.toString()
+    const select = document.getElementById(val);
+    select.classList.toggle("disBlock");
+
+    addOns.forEach(item => {
+      if (item.name.toString() === value.toString()) {
+        item.quantity = 1
+      } else {
+        item.quantity = 0
+      } setAddOns([...addOns])
+    })
+    setAddOns([...addOns])
+  }
+
   const increment = (name) => {
     addOns.forEach(item => {
       if (item.name.toString() === name.toString()) {
@@ -32,20 +55,12 @@ const AddOn = () => {
   const decrement = (name) => {
     addOns.forEach(item => {
       if (item.name.toString() === name.toString()) {
-        item.quantity === 0 ? item.quantity = 0 : item.quantity -= 1
+        item.quantity === 1 ? item.quantity = 1 : item.quantity -= 1
       }
     })
     setAddOns([...addOns])
     //setAddonsPrice((parseInt(addOns.price) * addOns.quantity))
   }
-  useEffect(() => {
-    const getTotal = () => {
-      const total = addOns.reduce((total, prd) => total + (parseInt(prd.price) * prd.quantity), 0);
-      setAddonsPrice((parseInt(totalPrice) + total))
-    }
-    getTotal()
-
-  }, [addOns, totalPrice, setAddonsPrice])
   return (
     <div className="addOnContainer">
       <div className="d-flex justify-content-between align-items-center">
@@ -58,12 +73,14 @@ const AddOn = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         {addOns.map((addOn, index) => (
           <div>
-            <Row className="d-flex justify-content-between" key={index}>
-              <Col sm={6}>
+            <div className="d-flex justify-content-between" key={index}>
+
+              <div>
                 <input
                   {...register("addonsOptions", { required: true })}
                   type="checkbox"
-                  onChange={(e) => handleSubmit(onSubmit(e.target.value))}
+                 // onChange={(e) => handleSubmit(onSubmit(index, e.target.value))}
+                  onClick={(e) => hiddenGame(index, e.target.value)}
                   value={addOn.name}
                   id={addOn.name}
                   className="form-check-input customRadioStyles"
@@ -71,24 +88,35 @@ const AddOn = () => {
                 <label className="form-check-label" for={addOn.name}>
                   {addOn.name}
                 </label>
-              </Col>
-              <Col sm={6}>
-                <Row>
-                  <Col sm={6}>
+              </div>
+
+
+              <div className="d-flex justify-content-between">
+                <p className="">
+                  <span className="">+{addOn.price}/each</span>
+                </p>
+                <div className="ms-5 disBlock" id={index}>
+                  <span className="decBtn" onClick={() => decrement(addOn.name)}>-</span>
+                  <span>{addOn.quantity}</span>
+                  <span className="incBtn" onClick={() => increment(addOn.name)}>+</span>
+                </div>
+              </div>
+              {/* <Row>
+                  <Col sm={6} xs={5}>
                     <p className="">
-                      <span className="ms-5 ">+{addOn.price}/each</span>
+                      <span className="">+{addOn.price}/each</span>
                     </p>
                   </Col>
-                  <Col sm={6}>
+                  <Col sm={6} xs={7}>
                     <div>
                       <span className="decBtn" onClick={() => decrement(addOn.name)}>-</span>
                       <span>{addOn.quantity}</span>
                       <span className="incBtn" onClick={() => increment(addOn.name)}>+</span>
                     </div>
                   </Col>
-                </Row>
-              </Col>
-            </Row>
+                </Row> */}
+
+            </div>
             <hr className="hrline" />
           </div>
         ))}

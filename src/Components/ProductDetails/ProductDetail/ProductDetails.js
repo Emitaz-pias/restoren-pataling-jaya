@@ -37,20 +37,14 @@ const ProductDetails = () => {
       <div className="productCard">
         <img className="mainImg" src={selectedProduct.image} alt="" />
         <p className="arrowBtn">
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "#D7D3D3",
-            }}
-            to="/"
-          >
+          <Link style={{textDecoration: "none",color: "#D7D3D3",}} to="/">
             {" "}
             <FontAwesomeIcon size="3x" icon={faArrowLeft} />
           </Link>
         </p>
         <p className="descriptions">
           <h2 className="mt-2 mb-3">{selectedProduct.name}</h2>
-          <h3 className="mt-3 mb-4 text-danger">RM{selectedProduct.price}</h3>
+          <h3 className="mt-3 mb-4 text-danger">RM {selectedProduct.price}</h3>
         </p>
       </div>
 
