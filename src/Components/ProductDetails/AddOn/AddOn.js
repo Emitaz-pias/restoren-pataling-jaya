@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./AddOn.css";
 
@@ -8,10 +8,20 @@ const AddOn = ({ addOns }) => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [addOnsArray, setAddOnsArray] = useState([]);
+  const [addonsOptions, setAddonsOptions] = useState([]);
+
   const onSubmit = (data) => {
-    console.log(data);
-    // post to our order object the data
+    const addNewOptions = [...addOnsArray, data];
+    setAddOnsArray(addNewOptions);
+    const index = addOnsArray.indexOf(data);
+    if (index > -1) {
+    } else {
+      const previousAddons = [...addonsOptions, data];
+      setAddonsOptions(previousAddons);
+    }
   };
+  console.log("our options");
   return (
     <div className="addOnContainer">
       <div className="d-flex justify-content-between align-items-center">
@@ -21,7 +31,7 @@ const AddOn = ({ addOns }) => {
         </div>
         <p className="text-secondary">(optional)</p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form>
         {addOns.map((addOn, index) => (
           <div>
             <div className="d-flex justify-content-between" key={index}>
