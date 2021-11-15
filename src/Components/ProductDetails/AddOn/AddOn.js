@@ -15,14 +15,6 @@ const AddOn = () => {
   const onSubmit = (index, value) => {
     
   };
-  useEffect(() => {
-    const getTotal = () => {
-      const total = addOns.reduce((total, prd) => total + (parseInt(prd.price) * prd.quantity), 0);
-      setAddonsPrice((parseInt(totalPrice) + total))
-    }
-    getTotal()
-
-  }, [addOns, totalPrice, setAddonsPrice])
   console.log(totalPrice, addonsPrice);
 
   const hiddenGame = (index, value) => {
@@ -61,6 +53,14 @@ const AddOn = () => {
     setAddOns([...addOns])
     //setAddonsPrice((parseInt(addOns.price) * addOns.quantity))
   }
+  useEffect(() => {
+    const getTotal = () => {
+      const total = addOns.reduce((total, prd) => total + (parseInt(prd.price) * prd.quantity), 0);
+      setAddonsPrice((parseInt(totalPrice) + total))
+    }
+    getTotal()
+
+  }, [addOns, totalPrice, setAddonsPrice])
   return (
     <div className="addOnContainer">
       <div className="d-flex justify-content-between align-items-center">
