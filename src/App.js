@@ -13,6 +13,8 @@ function App() {
   const [indgredients, setIndgredients] = useState("");
   const [deliveryOpiton, setDeliveryOpiton] = useState("");
   const [cartData, setCartData] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [addonsPrice, setAddonsPrice] = useState(0)
 
   return (
     <ProductsContext.Provider
@@ -22,6 +24,8 @@ function App() {
         selectIngredients: [indgredients, setIndgredients],
         selectDeliveryOption: [deliveryOpiton, setDeliveryOpiton],
         cart: [cartData, setCartData],
+        price: [totalPrice, setTotalPrice],
+        addonPrice: [addonsPrice, setAddonsPrice]
       }}
     >
       <Router>

@@ -7,3 +7,23 @@
   text-align: start;
   padding: 0.5em;
 }
+
+.decBtn {
+  padding: 0px 7px;
+  border-radius: 50%;
+  border: 1px solid black;
+  font-size: 15px;
+  font-weight: 700;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.incBtn{
+  padding: 0px 5px;
+  border-radius: 50%;
+  border: 1px solid black;
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 10px;
+  cursor: pointer;
+}
