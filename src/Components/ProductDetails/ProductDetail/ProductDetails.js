@@ -12,8 +12,10 @@ import Remarks from "../Remarks/Remarks";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
-  const { productSelection, cart, selectDeliveryOption, price } = useContext(ProductsContext);
+  const { productSelection, cart, selectDeliveryOption, price, detailsPage } =
+    useContext(ProductsContext);
 
+  const [showDetails, setShowDetails] = detailsPage;
   const [selectedProduct, setSeletedProduct] = productSelection;
   const [cartData, setCartData] = cart;
   const [showIngredient, setShowIngredient] = useState(false);
@@ -21,9 +23,8 @@ const ProductDetails = () => {
   const [totalPrice, setTotalPrice] = price;
   const [quantityCart, setQuantityCart] = useState(1);
 
-
   if (showIngredient === true) {
-    setTotalPrice(selectedProduct.price)
+    setTotalPrice(selectedProduct.price);
   }
 
   const { register, handleSubmit } = useForm();
@@ -36,17 +37,8 @@ const ProductDetails = () => {
     <div style={{ backgroundColor: "#D7D3D3" }}>
       <div className="productCard">
         <img className="mainImg" src={selectedProduct.image} alt="" />
-        <p className="arrowBtn">
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "#D7D3D3",
-            }}
-            to="/"
-          >
-            {" "}
-            <FontAwesomeIcon size="3x" icon={faArrowLeft} />
-          </Link>
+        <p onClick={() => setShowDetails(false)} className="arrowBtn">
+          <FontAwesomeIcon size="3x" icon={faArrowLeft} />
         </p>
         <p className="descriptions">
           <h2 className="mt-2 mb-3">{selectedProduct.name}</h2>
@@ -102,16 +94,21 @@ const ProductDetails = () => {
           {selectedProduct.ingredients !== undefined && (
             <Ingredients ingredients={selectedProduct.ingredients} />
           )}
-          {selectedProduct.addOns !== undefined && (
-            <AddOn />
-          )}
+          {selectedProduct.addOns !== undefined && <AddOn />}
 
           <Remarks />
-          <Quantity quantityCart={quantityCart} setQuantityCart={setQuantityCart} />
+          <Quantity
+            quantityCart={quantityCart}
+            setQuantityCart={setQuantityCart}
+          />
         </div>
       ) : null}
       <div className="mt-5">
-        <Cart showIngredient={showIngredient} quantityCart={quantityCart} />
+        <Cart
+          cartBtn={"Add To Cart"}
+          showIngredient={showIngredient}
+          quantityCart={quantityCart}
+        />
       </div>
     </div>
   );

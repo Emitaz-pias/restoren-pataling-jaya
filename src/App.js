@@ -11,10 +11,11 @@ function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [selectedProduct, setSeletedProduct] = useState({});
   const [indgredients, setIndgredients] = useState("");
+  const [selectedAddons, setSelectedAddos] = useState("");
   const [deliveryOption, setDeliveryOption] = useState("");
   const [cartData, setCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [addonsPrice, setAddonsPrice] = useState(0)
+  const [addonsPrice, setAddonsPrice] = useState(0);
 
   return (
     <ProductsContext.Provider
@@ -22,10 +23,11 @@ function App() {
         detailsPage: [showDetails, setShowDetails],
         productSelection: [selectedProduct, setSeletedProduct],
         selectIngredients: [indgredients, setIndgredients],
+        selectAddons: [selectedAddons, setSelectedAddos],
         selectDeliveryOption: [deliveryOption, setDeliveryOption],
         cart: [cartData, setCartData],
         price: [totalPrice, setTotalPrice],
-        addonPrice: [addonsPrice, setAddonsPrice]
+        addonPrice: [addonsPrice, setAddonsPrice],
       }}
     >
       <Router>

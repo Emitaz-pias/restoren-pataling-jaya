@@ -21,6 +21,11 @@
   text-decoration: none;
   color: white;
   font-weight: 600;
+  outline: none !important;
+  border: none !important;
+}
+.cartButton:active {
+  outline: none !important;
 }
 .cartButton:hover {
   color: white;

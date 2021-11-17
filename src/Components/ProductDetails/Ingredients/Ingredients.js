@@ -18,7 +18,7 @@ const Ingredients = ({ ingredients }) => {
     // setCartData(newCart);
     // post to our order object the data
   };
-  console.log(indgredients, "iscartData");
+  // console.log(indgredients, "iscartData");
   return (
     <div className="ingredientsContainer">
       <form onSubmit={handleSubmit(onSubmit)}>

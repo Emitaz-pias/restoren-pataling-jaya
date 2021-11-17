@@ -11,27 +11,38 @@ import Rice from "../Menu/Category/Rice/Rice";
 import Category from "./Category/Category";
 import Header from "./Header/Header";
 import Cart from "./Footer/Cart/Cart";
+import { ProductsContext } from "../../App";
+import ProductDetails from "../ProductDetails/ProductDetail/ProductDetails";
 
 const getDimensions = (ele) => {
-  const { height } = ele.getBoundingClientRect();
-  const offsetTop = ele.offsetTop;
-  const offsetBottom = offsetTop + height;
+  if (ele !== null || ele !== undefined) {
+    const { height } = ele.getBoundingClientRect();
+    const offsetTop = ele.offsetTop;
+    const offsetBottom = offsetTop + height;
 
-  return {
-    height,
-    offsetTop,
-    offsetBottom,
-  };
+    return {
+      height,
+      offsetTop,
+      offsetBottom,
+    };
+  } else {
+    return;
+  }
 };
 const scrollTo = (ele) => {
-  ele.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  if (ele !== null || ele !== undefined) {
+    ele.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
 };
 
 const Menu = () => {
   const [visibleSection, setVisibleSection] = useState();
+  const { productSelection, detailsPage } = useContext(ProductsContext);
+  const [showDetails, setShowDetails] = detailsPage;
+  console.log("show details from menu page", showDetails);
 
   const headerRef = useRef(null);
   const burgerRef = useRef(null);
@@ -60,7 +71,7 @@ const Menu = () => {
       const selected = sectionRefs.find(({ section, ref }) => {
         const ele = ref.current;
 
-        if (ele) {
+        if (ele !== null) {
           const { offsetBottom, offsetTop } = getDimensions(ele);
           return scrollPosition > offsetTop && scrollPosition < offsetBottom;
         }
@@ -115,67 +126,78 @@ const Menu = () => {
   }, [visibleSection]);
 
   return (
-    <div>
-      <Slider></Slider>
-      <div>
-        <div className="content">
-          {window.scrollY > 360 ? (
-            <Header
-              visibleSection={visibleSection}
-              headerRef={headerRef}
-              burgerRef={burgerRef}
-              pizzaRef={pizzaRef}
-              pastaRef={pastaRef}
-              riceRef={riceRef}
-              juiceRef={juiceRef}
-              biriyaniRef={biriyaniRef}
-              beverageRef={beverageRef}
-              scrollTo={scrollTo}
-            />
-          ) : (
-            <div>
-              <Category
-                visibleSection={visibleSection}
-                headerRef={headerRef}
-                burgerRef={burgerRef}
-                pizzaRef={pizzaRef}
-                pastaRef={pastaRef}
-                riceRef={riceRef}
-                juiceRef={juiceRef}
-                biriyaniRef={biriyaniRef}
-                beverageRef={beverageRef}
-                scrollTo={scrollTo}
-              />
+    <>
+      {showDetails ? (
+        <ProductDetails />
+      ) : (
+        <main>
+          {" "}
+          <Slider></Slider>
+          <div>
+            <div className="content">
+              {window.scrollY > 360 ? (
+                <Header
+                  visibleSection={visibleSection}
+                  headerRef={headerRef}
+                  burgerRef={burgerRef}
+                  pizzaRef={pizzaRef}
+                  pastaRef={pastaRef}
+                  riceRef={riceRef}
+                  juiceRef={juiceRef}
+                  biriyaniRef={biriyaniRef}
+                  beverageRef={beverageRef}
+                  scrollTo={scrollTo}
+                />
+              ) : (
+                <div>
+                  <Category
+                    visibleSection={visibleSection}
+                    headerRef={headerRef}
+                    burgerRef={burgerRef}
+                    pizzaRef={pizzaRef}
+                    pastaRef={pastaRef}
+                    riceRef={riceRef}
+                    juiceRef={juiceRef}
+                    biriyaniRef={biriyaniRef}
+                    beverageRef={beverageRef}
+                    scrollTo={scrollTo}
+                  />
+                </div>
+              )}
+
+              <div className="section text-center" id="burger" ref={burgerRef}>
+                <Burger />
+              </div>
+              <div className="section text-center" id="pizza" ref={pizzaRef}>
+                <Pizza />
+              </div>
+              <div
+                className="section text-center"
+                id="biriyani"
+                ref={biriyaniRef}
+              >
+                <Biriyani />
+              </div>
+              <div className="section text-center" id="rice" ref={riceRef}>
+                <Rice />
+              </div>
+              <div className="section text-center" id="pasta" ref={pastaRef}>
+                <Pasta />
+              </div>
+
+              <div className="section text" id="juice" ref={juiceRef}>
+                <Juice />
+              </div>
+              <div className="section text" id="beverage" ref={beverageRef}>
+                <Beverage />
+              </div>
             </div>
-          )}
-
-          <div className="section text-center" id="burger" ref={burgerRef}>
-            <Burger />
+            <div className="bottom-spacer" />
           </div>
-          <div className="section text-center" id="pizza" ref={pizzaRef}>
-            <Pizza />
-          </div>
-          <div className="section text-center" id="biriyani" ref={biriyaniRef}>
-            <Biriyani />
-          </div>
-          <div className="section text-center" id="rice" ref={riceRef}>
-            <Rice />
-          </div>
-          <div className="section text-center" id="pasta" ref={pastaRef}>
-            <Pasta />
-          </div>
-
-          <div className="section text" id="juice" ref={juiceRef}>
-            <Juice />
-          </div>
-          <div className="section text" id="beverage" ref={beverageRef}>
-            <Beverage />
-          </div>
-        </div>
-        <div className="bottom-spacer" />
-      </div>
-      {window.scrollY > 370 && <Cart />}
-    </div>
+          {window.scrollY > 370 && <Cart cartBtn={"Cart"} />}
+        </main>
+      )}
+    </>
   );
 };
 

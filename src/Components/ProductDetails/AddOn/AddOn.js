@@ -5,19 +5,43 @@ import { ProductsContext } from "../../../App";
 import "./AddOn.css";
 
 const AddOn = () => {
-  const { productSelection, price, addonPrice } = useContext(ProductsContext);
+  const { productSelection, price, addonPrice, selectAddons } =
+    useContext(ProductsContext);
   const [selectedProduct] = productSelection;
   const [addOns, setAddOns] = useState(selectedProduct.addOns);
+  const [selectedAddons, setSelectedAddos] = selectAddons;
   const [totalPrice] = price;
   const [addonsPrice, setAddonsPrice] = addonPrice;
+  const [showAddonControlerButtons, setShowAddonControlerButtons] =
+    useState(false);
+  const [btnName, setBtnName] = useState("");
 
-  const { register, handleSubmit } = useForm();
+  const [checkedState, setCheckedState] = useState(
+    new Array(addOns.length).fill(false)
+  );
 
-  const onSubmit = (data) => {
-    // console.log(data);
-    // post to our order object the data
-  };
-  console.log(totalPrice, addonsPrice);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log("data", data);
+
+  // const handleOnChange = (position) => {
+  //   const updatedCheckedState = checkedState.map((item, index) =>
+  //     index === position ? !item : item
+  //   );
+
+  //   setCheckedState(updatedCheckedState);
+  // };
+  // console.log("checked state", checkedState);
+  ////
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////
 
   const increment = (name) => {
     addOns.forEach((item) => {
@@ -27,6 +51,7 @@ const AddOn = () => {
     });
     setAddOns([...addOns]);
     //setAddonsPrice((parseInt(addOns.price) * addOns.quantity))
+    setSelectedAddos(addOns);
   };
 
   const decrement = (name) => {
@@ -36,8 +61,10 @@ const AddOn = () => {
       }
     });
     setAddOns([...addOns]);
+    setSelectedAddos(addOns);
     //setAddonsPrice((parseInt(addOns.price) * addOns.quantity))
   };
+  // console.log("addOns array is ", addOns);
   useEffect(() => {
     const getTotal = () => {
       const total = addOns.reduce(
@@ -57,54 +84,62 @@ const AddOn = () => {
         </div>
         <p className="text-secondary">(optional)</p>
       </div>
-      <form>
+      <div>
         {addOns.map((addOn, index) => (
           <div>
-            <Row className="d-flex justify-content-between" key={index}>
-              <Col sm={6}>
+            <div className="d-flex justify-content-between" key={index}>
+              <form>
                 <input
-                  {...register("addonsOptions", { required: true })}
+                  {...register("addonOptions", {
+                    required: true,
+                    maxLength: 100,
+                  })}
                   type="checkbox"
-                  onChange={(e) => handleSubmit(onSubmit(e.target.value))}
                   value={addOn.name}
                   id={addOn.name}
+                  checked={checkedState[index]}
+                  onChange={(e) => handleSubmit(onSubmit(e.target.value))}
                   className="form-check-input customRadioStyles"
                 />
                 <label className="form-check-label" for={addOn.name}>
                   {addOn.name}
                 </label>
-              </Col>
-              <Col sm={6}>
-                <Row>
-                  <Col sm={6}>
-                    <p className="">
-                      <span className="ms-5 ">+{addOn.price}/each</span>
-                    </p>
-                  </Col>
-                  <Col sm={6}>
-                    <div>
-                      <span
-                        className="decBtn"
-                        onClick={() => decrement(addOn.name)}
-                      >
-                        -
-                      </span>
-                      <span>{addOn.quantity}</span>
-                      <span
-                        className="incBtn"
-                        onClick={() => increment(addOn.name)}
-                      >
-                        +
-                      </span>
-                    </div>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
+              </form>
+              <div>
+                <p className="">
+                  <span className="ms-5 ">+{addOn.price}/each</span>
+                </p>
+              </div>
+
+              {/* // plus minsu button */}
+              <div
+                className={`${
+                  addOn.name === btnName && showAddonControlerButtons === true
+                    ? "d-block"
+                    : "d-none"
+                }`}
+              >
+                <div>
+                  <span
+                    className="decBtn"
+                    onClick={() => decrement(addOn.name)}
+                  >
+                    -
+                  </span>
+                  <span>{addOn.quantity}</span>
+                  <span
+                    className="incBtn"
+                    onClick={() => increment(addOn.name)}
+                  >
+                    +
+                  </span>
+                </div>
+              </div>
+            </div>
             <hr className="hrline" />
           </div>
         ))}
-      </form>
+      </div>
     </div>
   );
 };

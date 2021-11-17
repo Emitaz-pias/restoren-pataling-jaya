@@ -5,18 +5,20 @@ import "./MenuCard.css";
 import ProductDetails from "../../ProductDetails/ProductDetail/ProductDetails";
 
 const MenuCard = ({ productData }) => {
-  const { productSelection } = useContext(ProductsContext);
+  const { productSelection, detailsPage } = useContext(ProductsContext);
   const [sectedProduct, setSeletedProduct] = productSelection;
+  const [showDetails, setShowDetails] = detailsPage;
 
   const handleSelectProduct = (selectedProduct) => {
     const product = selectedProduct;
     setSeletedProduct(product);
+    setShowDetails(true);
   };
 
   return (
     <div>
       {productData.image ? (
-        <Link
+        <div
           style={{ textDecoration: "none", color: "inherit" }}
           to="/product"
           onClick={() => handleSelectProduct(productData)}
@@ -34,7 +36,7 @@ const MenuCard = ({ productData }) => {
               <p className="productPrice">{productData.price}</p>
             </div>
           </div>
-        </Link>
+        </div>
       ) : (
         <div className="cardBodyWithoutImage d-flex align-items-center">
           <div className="productDetailsOnlyText">

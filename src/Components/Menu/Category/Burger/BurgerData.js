@@ -26,14 +26,14 @@ export const burgerData = [
     description: "cheese,Naga",
   },
   {
-    name: "Chicken Naga Burger",
+    name: "Chicken  Burger",
     image: burgerJpg,
     price: "15.40",
     deletedprice: ".20",
     description: "cheese,Naga",
   },
   {
-    name: "Chicken Naga Burger",
+    name: "Chicken Cheese Burger",
     image: burgerJpg,
     price: "150.40",
     deletedprice: ".20",
