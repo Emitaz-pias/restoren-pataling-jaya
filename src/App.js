@@ -10,21 +10,25 @@ export const ProductsContext = createContext();
 function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [selectedProduct, setSeletedProduct] = useState({});
+  const [deliveryOption, setDeliveryOption] = useState("");
   const [indgredients, setIndgredients] = useState("");
   const [selectedAddons, setSelectedAddos] = useState("");
-  const [deliveryOption, setDeliveryOption] = useState("");
+  const [remarks, setRemarks] = useState([]);
   const [cartData, setCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [addonsPrice, setAddonsPrice] = useState(0);
+  const [showCheckout, setShowCheckout] = useState(false);
 
   return (
     <ProductsContext.Provider
       value={{
         detailsPage: [showDetails, setShowDetails],
+        showCheckoutPage: [showCheckout, setShowCheckout],
         productSelection: [selectedProduct, setSeletedProduct],
+        selectDeliveryOption: [deliveryOption, setDeliveryOption],
         selectIngredients: [indgredients, setIndgredients],
         selectAddons: [selectedAddons, setSelectedAddos],
-        selectDeliveryOption: [deliveryOption, setDeliveryOption],
+        getRemarks: [remarks, setRemarks],
         cart: [cartData, setCartData],
         price: [totalPrice, setTotalPrice],
         addonPrice: [addonsPrice, setAddonsPrice],
@@ -40,9 +44,6 @@ function App() {
           </Route>
           <Route path="/product">
             <ProductDetails />
-          </Route>
-          <Route path="/cart">
-            <CartPage />
           </Route>
         </Switch>
       </Router>

@@ -13,6 +13,7 @@ import Header from "./Header/Header";
 import Cart from "./Footer/Cart/Cart";
 import { ProductsContext } from "../../App";
 import ProductDetails from "../ProductDetails/ProductDetail/ProductDetails";
+import CartPage from "../CartPage/CartPage";
 
 const getDimensions = (ele) => {
   if (ele !== null || ele !== undefined) {
@@ -40,9 +41,10 @@ const scrollTo = (ele) => {
 
 const Menu = () => {
   const [visibleSection, setVisibleSection] = useState();
-  const { productSelection, detailsPage } = useContext(ProductsContext);
+  const { productSelection, detailsPage, showCheckoutPage } =
+    useContext(ProductsContext);
   const [showDetails, setShowDetails] = detailsPage;
-  console.log("show details from menu page", showDetails);
+  // console.log("show details from menu pae", showDetails);
 
   const headerRef = useRef(null);
   const burgerRef = useRef(null);
@@ -124,7 +126,6 @@ const Menu = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [visibleSection]);
-
   return (
     <>
       {showDetails ? (

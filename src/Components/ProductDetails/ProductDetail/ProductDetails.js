@@ -42,7 +42,7 @@ const ProductDetails = () => {
         </p>
         <p className="descriptions">
           <h2 className="mt-2 mb-3">{selectedProduct.name}</h2>
-          <h3 className="mt-3 mb-4 text-danger">RM{selectedProduct.price}</h3>
+          <h3 className="mt-3 mb-4 text-danger">RM {selectedProduct.price}</h3>
         </p>
       </div>
 

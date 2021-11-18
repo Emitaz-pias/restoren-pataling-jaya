@@ -5,10 +5,12 @@ import "./Cart.css";
 const Cart = ({ showIngredient, quantityCart, cartBtn }) => {
   const {
     productSelection,
+    showCheckoutPage,
     cart,
+    selectDeliveryOption,
     selectIngredients,
     selectAddons,
-    selectDeliveryOption,
+    getRemarks,
     addonPrice,
     detailsPage,
   } = useContext(ProductsContext);
@@ -19,19 +21,22 @@ const Cart = ({ showIngredient, quantityCart, cartBtn }) => {
   const [cartData, setCartData] = cart;
   const [addonsPrice, setAddonsPrice] = addonPrice;
   const [showDetails, setShowDetails] = detailsPage;
+  const [remarks, setRemarks] = getRemarks;
 
   let addedProduct = [
     {
+      selectedProduct: selectedProduct,
       deliveryOption: deliveryOption,
       indgredients: indgredients,
       addOns: selectedAddons,
-      selectedProduct: selectedProduct,
+      remarks: remarks,
       totalPrice: addonsPrice * quantityCart,
       orderQuantity: quantityCart,
     },
   ];
   const [buttonName, setButtonName] = useState("");
   const getTheButton = document.getElementById(`cartButton`);
+  const [showCheckout, setShowCheckout] = showCheckoutPage;
 
   useEffect(() => {
     if (getTheButton !== null) {
@@ -40,15 +45,14 @@ const Cart = ({ showIngredient, quantityCart, cartBtn }) => {
     }
   }, [getTheButton]);
   const handleShowCart = () => {
-    console.log("show the cart", selectedProduct);
-    console.log("addedProduct", cartData);
+    setShowCheckout(true);
   };
   const handleAddToCartButton = () => {
     const newCartData = [...cartData, addedProduct];
     setCartData(newCartData);
     setShowDetails(false);
   };
-
+  // console.log("our cart data", cartData);
   return (
     <div className="cartContainer">
       <div className="cartBody d-flex align-items-center justify-content-around">

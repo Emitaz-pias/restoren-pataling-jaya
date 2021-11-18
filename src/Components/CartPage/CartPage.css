@@ -1,0 +1,15 @@
+.cartHeader {
+  border-bottom: 2px solid lightgrey;
+  height: 3rem;
+}
+.cartArrowBtn {
+  margin-top: 0.8rem;
+  color: rgb(147, 141, 141);
+  margin-left: 1rem;
+}
+.titleCart {
+  margin-left: 7.5rem;
+  font-size: 1.8rem;
+  color: black;
+  font-family: "Bebas Neue";
+}
