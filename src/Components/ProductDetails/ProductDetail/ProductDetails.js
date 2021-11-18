@@ -2,7 +2,6 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import { ProductsContext } from "../../../App";
 import Cart from "../../Menu/Footer/Cart/Cart";
 import AddOn from "../AddOn/AddOn";

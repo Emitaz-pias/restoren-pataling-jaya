@@ -13,3 +13,24 @@
   color: black;
   font-family: "Bebas Neue";
 }
+.cartProductContainer {
+}
+.productImage {
+  width: 3.813rem;
+  height: 3.625rem;
+  border-radius: 10px;
+  margin-left: 0.7rem;
+}
+.deliveryOptionContainer {
+  position: absolute;
+  left: 70vw;
+}
+.deliveryOption {
+  background-color: black;
+  color: white;
+  padding: 0.3rem;
+  width: 5rem;
+  text-align: center !important;
+  height: 1.5rem;
+  border-radius: 1rem;
+}
