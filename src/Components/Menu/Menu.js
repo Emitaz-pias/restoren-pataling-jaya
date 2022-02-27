@@ -13,7 +13,7 @@ import Header from "./Header/Header";
 import Cart from "./Footer/Cart/Cart";
 import { ProductsContext } from "../../App";
 import ProductDetails from "../ProductDetails/ProductDetail/ProductDetails";
-import CartPage from "../CartPage/CartPage";
+//import CartPage from "../CartPage/CartPage";
 
 const getDimensions = (ele) => {
   if (ele !== null || ele !== undefined) {
@@ -26,8 +26,6 @@ const getDimensions = (ele) => {
       offsetTop,
       offsetBottom,
     };
-  } else {
-    return;
   }
 };
 const scrollTo = (ele) => {

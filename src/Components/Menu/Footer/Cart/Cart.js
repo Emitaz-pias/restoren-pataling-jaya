@@ -16,7 +16,7 @@ const Cart = ({ showIngredient, quantityCart, cartBtn }) => {
   } = useContext(ProductsContext);
   const [selectedProduct, setSeletedProduct] = productSelection;
   const [indgredients, setIndgredients] = selectIngredients;
-  const [selectedAddons, setSelectedAddos] = selectAddons;
+  const [selectedAddons, setSelectedAddons] = selectAddons;
   const [deliveryOption, setDeliveryOption] = selectDeliveryOption;
   const [cartData, setCartData] = cart;
   const [addonsPrice, setAddonsPrice] = addonPrice;
@@ -32,8 +32,10 @@ const Cart = ({ showIngredient, quantityCart, cartBtn }) => {
       remarks: remarks,
       totalPrice: addonsPrice * quantityCart,
       orderQuantity: quantityCart,
+      cartData
     },
   ];
+  //console.log(addedProduct)
   const [buttonName, setButtonName] = useState("");
   const getTheButton = document.getElementById(`cartButton`);
   const [showCheckout, setShowCheckout] = showCheckoutPage;
@@ -54,7 +56,7 @@ const Cart = ({ showIngredient, quantityCart, cartBtn }) => {
   };
   // console.log("our cart data", cartData);
   return (
-    <div className="cartContainer">
+    <div className="cartContainer" >
       <div className="cartBody d-flex align-items-center justify-content-around">
         <button
           id="cartButton"
@@ -67,7 +69,7 @@ const Cart = ({ showIngredient, quantityCart, cartBtn }) => {
         >
           {cartBtn}
         </button>
-        <p className="cartButton">Items{cartData.length}</p>
+        <p className="cartButton">Items {cartData.length}</p>
         <p id="cartPrice" className="cartButton">
           {showIngredient === true ? (
             addonsPrice === 0 ? (
@@ -76,11 +78,11 @@ const Cart = ({ showIngredient, quantityCart, cartBtn }) => {
               <p>RM {addonsPrice * quantityCart}.00</p>
             )
           ) : (
-            <p>RM00.00</p>
+            <p>RM 00.00</p>
           )}
         </p>
       </div>
-    </div>
+    </div >
   );
 };
 

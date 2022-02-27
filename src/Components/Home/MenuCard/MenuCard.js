@@ -6,7 +6,7 @@ import ProductDetails from "../../ProductDetails/ProductDetail/ProductDetails";
 
 const MenuCard = ({ productData }) => {
   const { productSelection, detailsPage } = useContext(ProductsContext);
-  const [sectedProduct, setSeletedProduct] = productSelection;
+  const [seletedProduct, setSeletedProduct] = productSelection;
   const [showDetails, setShowDetails] = detailsPage;
 
   const handleSelectProduct = (selectedProduct) => {

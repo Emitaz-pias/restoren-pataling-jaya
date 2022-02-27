@@ -34,3 +34,35 @@
   height: 1.5rem;
   border-radius: 1rem;
 }
+.dish_image {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.dish_name {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #000;
+}
+.dish_list {
+  padding-left: 0.5rem !important;
+}
+.dish_list li {
+  list-style: none;
+}
+.checkout_page {
+  background-color: #1ce598 !important;
+  margin: 15px;
+  border-radius: 10px;
+}
+.checkout {
+  padding: 15px 20px;
+
+  color: antiquewhite;
+  font-size: 1.2em;
+}
+.checkout p {
+  margin: 0px !important;
+}

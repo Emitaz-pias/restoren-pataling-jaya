@@ -17,10 +17,10 @@ import ProductDetails from "../ProductDetails/ProductDetail/ProductDetails";
 import CartPage from "../CartPage/CartPage";
 
 const HomePage = () => {
-  const { productSelection, detailsPage, showCheckoutPage } =
+  const { detailsPage, showCheckoutPage } =
     useContext(ProductsContext);
-  const [showDetails, setShowDetails] = detailsPage;
-  const [showCheckout, setShowCheckout] = showCheckoutPage;
+  const [showDetails] = detailsPage;
+  const [showCheckout] = showCheckoutPage;
 
   const [selected, setSelected] = useState(false);
   const [selectedDiv, setSelectedDiv] = useState("menuDiv");
@@ -82,9 +82,8 @@ const HomePage = () => {
                     {/* menuDiv */}
                     <div
                       onClick={() => handleSelect("menuDiv")}
-                      className={`${
-                        selectedDiv === "menuDiv" && "active"
-                      } box d-flex justify-content-around align-items-center`}
+                      className={`${selectedDiv === "menuDiv" && "active"
+                        } box d-flex justify-content-around align-items-center`}
                     >
                       <span>
                         {" "}
@@ -100,9 +99,8 @@ const HomePage = () => {
                     {/* reviewdiv */}
                     <div
                       onClick={() => handleSelect("reviewDiv")}
-                      className={`${
-                        selectedDiv === "reviewDiv" && "active"
-                      } box d-flex justify-content-around align-items-center`}
+                      className={`${selectedDiv === "reviewDiv" && "active"
+                        } box d-flex justify-content-around align-items-center`}
                     >
                       <span>
                         {" "}
@@ -123,9 +121,8 @@ const HomePage = () => {
                     {/* infoDiv */}
                     <div
                       onClick={() => handleSelect("infoDiv")}
-                      className={`${
-                        selectedDiv === "infoDiv" && "active"
-                      } infoDiv box d-flex  align-items-center`}
+                      className={`${selectedDiv === "infoDiv" && "active"
+                        } infoDiv box d-flex  align-items-center`}
                     >
                       <FontAwesomeIcon
                         className="customIconI"

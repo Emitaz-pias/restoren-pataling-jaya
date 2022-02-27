@@ -6,34 +6,55 @@ import "./AddOn.css";
 const AddOn = () => {
   const { productSelection, price, addonPrice, selectAddons } =
     useContext(ProductsContext);
+
   const [selectedProduct] = productSelection;
   const [addOns, setAddOns] = useState(selectedProduct.addOns);
-  const [selectedAddons, setSelectedAddos] = selectAddons;
+  const [selectedAddons, setSelectedAddons] = selectAddons;
   const [totalPrice] = price;
   const [addonsPrice, setAddonsPrice] = addonPrice;
 
-  const [checkedState, setCheckedState] = useState(
-    new Array(addOns.length).fill(false)
-  );
-  const { register, handleSubmit } = useForm();
-  // const onSubmit = (index, value) => {};
-  // console.log(totalPrice, addonsPrice);
+  const { register } = useForm();
+
+  //console.log(totalPrice, addonsPrice, addOns, add, selectedAddons);
+
+  useEffect(() => {
+    const getTotal = () => {
+      const total = addOns.reduce(
+        (total, prd) => total + parseInt(prd.price) * prd.quantity,
+        0
+      );
+      setAddonsPrice(parseInt(totalPrice) + total);
+    };
+    getTotal();
+  }, [addOns, totalPrice, setAddonsPrice, addonsPrice]);
 
   const hiddenGame = (index, value) => {
-    // post to our order object the data
-    const val = index.toString();
+    let val = index.toString();
     const select = document.getElementById(val);
     select.classList.toggle("disBlock");
+    var chb = document.getElementsByClassName('chk');
 
-    addOns.forEach((item) => {
-      if (item.name.toString() === value.toString()) {
-        item.quantity = 1;
-      } else {
-        item.quantity = 0;
-      }
+    if (chb[index].checked) {
+      addOns.forEach((item) => {
+        if (item.name.toString() === value.toString()) {
+          item.quantity = 1;
+          console.log(item)
+          setSelectedAddons([...selectedAddons, item])
+        }
+      });
       setAddOns([...addOns]);
-    });
-    setAddOns([...addOns]);
+    }
+    if (!chb[index].checked) {
+      addOns.forEach((item) => {
+        if (item.name.toString() === value.toString()) {
+          item.quantity = 0;
+          console.log(item)
+        }
+      });
+      setAddOns([...addOns]);
+      const deleItem = selectedAddons.filter(d => d.name !== value.toString())
+      setSelectedAddons(deleItem)
+    }
   };
 
   const increment = (name) => {
@@ -55,16 +76,7 @@ const AddOn = () => {
     setAddOns([...addOns]);
     //setAddonsPrice((parseInt(addOns.price) * addOns.quantity))
   };
-  useEffect(() => {
-    const getTotal = () => {
-      const total = addOns.reduce(
-        (total, prd) => total + parseInt(prd.price) * prd.quantity,
-        0
-      );
-      setAddonsPrice(parseInt(totalPrice) + total);
-    };
-    getTotal();
-  }, [addOns, totalPrice, setAddonsPrice]);
+
   return (
     <div className="addOnContainer">
       <div className="d-flex justify-content-between align-items-center">
@@ -76,7 +88,7 @@ const AddOn = () => {
       </div>
       <form>
         {addOns.map((addOn, index) => (
-          <div>
+          <div key={index}>
             <div className="d-flex justify-content-between" key={index}>
               <div>
                 <input
@@ -85,8 +97,8 @@ const AddOn = () => {
                   onClick={(e) => hiddenGame(index, e.target.value)}
                   value={addOn.name}
                   id={addOn.name}
-                  className="form-check-input customRadioStyles"
-                />
+                  active
+                  className="form-check-input customRadioStyles chk" />
                 <label className="form-check-label" for={addOn.name}>
                   {addOn.name}
                 </label>
@@ -115,93 +127,11 @@ const AddOn = () => {
             </div>
             <hr className="hrline" />
           </div>
-        ))}
-      </form>
-    </div>
+        ))
+        }
+      </form >
+    </div >
   );
 };
 
 export default AddOn;
-
-// {/* {addOns.map((addOn, index) => (
-//         <div key={index} className="addon mt-3">
-//           <div className="d-flex justify-content-between">
-//             <div className="form-check">
-//               <input
-//                 className="form-check-input customRadioStyles"
-//                 type="radio"
-//                 name={addOn.name}
-//                 id={addOn.name}
-//                 onChange={(e) => {}}
-//               />
-//               <label className="form-check-label" for="flexRadioDefault1">
-//                 {addOn.name}
-//               </label>
-//             </div>
-//             <p className="">
-//               <span className="ms-5 ">+{addOn.price}/each</span>
-//             </p>
-//           </div>
-//           <hr className="hrline" />
-//         </div>
-//       ))} */}
-// {/* <div className="addon">
-//         <div className="d-flex justify-content-between">
-//           <div className="form-check">
-//             <input
-//               className="form-check-input customRadioStyles"
-//               type="radio"
-//               name="flexRadioDefault"
-//               id="flexRadioDefault1"
-//               onChange={(e) => {}}
-//             />
-//             <label className="form-check-label" for="flexRadioDefault1">
-//               Telur Mata
-//             </label>
-//           </div>
-//           <p className="ms-5 ps-5">
-//             <span className="ms-5">+RM2.00/each</span>
-//           </p>
-//         </div>
-//         <hr className="hrline" />
-//       </div> */}
-// {/* <div className="addon">
-//         <div className="d-flex justify-content-between">
-//           <div className="form-check">
-//             <input
-//               className="form-check-input customRadioStyles"
-//               type="radio"
-//               name="flexRadioDefault"
-//               id="flexRadioDefault1"
-//               onChange={(e) => {}}
-//             />
-//             <label className="form-check-label" for="flexRadioDefault1">
-//               Telur Dadar
-//             </label>
-//           </div>
-//           <p className="ms-5 ps-5">
-//             <span className="ms-5 ">+RM2.10/each</span>
-//           </p>
-//         </div>
-//         <hr className="hrline" />
-//       </div> */}
-// {/* <div className="addon">
-//         <div className="d-flex justify-content-between">
-//           <div className="form-check">
-//             <input
-//               className="form-check-input customRadioStyles"
-//               type="radio"
-//               name="flexRadioDefault"
-//               id="flexRadioDefault1"
-//               onChange={(e) => {}}
-//             />
-//             <label className="form-check-label" for="flexRadioDefault1">
-//               Ayam Goreng
-//             </label>
-//           </div>
-//           <p className="ms-5 ">
-//             <span className="ms-5">+RM10.00/each</span>
-//           </p>
-//         </div>
-//         <hr className="hrline" />
-//       </div> */}

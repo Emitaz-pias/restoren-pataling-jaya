@@ -18,6 +18,12 @@ export const burgerData = [
     price: "13.00",
     description: "beef patty, BBQ sauce,",
     ingredients: ["Letus", "Indian Onion", "Somthing really Big tasty"],
+    addOns: [
+      { name: "Pink Salt", price: "2.00", quantity: 0 },
+      { name: "Ugandian Natural Letus", price: "2.00", quantity: 0 },
+      { name: "Salt", price: "2.50", quantity: 0 },
+      { name: "Natural Letus", price: "2.60", quantity: 0 },
+    ],
   },
   {
     name: "Chicken Naga Burger",
