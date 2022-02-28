@@ -10,12 +10,12 @@ const AddOn = () => {
   const [selectedProduct] = productSelection;
   const [addOns, setAddOns] = useState(selectedProduct.addOns);
   const [selectedAddons, setSelectedAddons] = selectAddons;
-  const [totalPrice] = price;
+  const [totalPrice, setTotalPrice] = price;
   const [addonsPrice, setAddonsPrice] = addonPrice;
 
   const { register } = useForm();
 
-  //console.log(totalPrice, addonsPrice, addOns, add, selectedAddons);
+  console.log(totalPrice, addonsPrice);
 
   useEffect(() => {
     const getTotal = () => {
@@ -38,7 +38,6 @@ const AddOn = () => {
       addOns.forEach((item) => {
         if (item.name.toString() === value.toString()) {
           item.quantity = 1;
-          console.log(item)
           setSelectedAddons([...selectedAddons, item])
         }
       });
@@ -48,7 +47,6 @@ const AddOn = () => {
       addOns.forEach((item) => {
         if (item.name.toString() === value.toString()) {
           item.quantity = 0;
-          console.log(item)
         }
       });
       setAddOns([...addOns]);

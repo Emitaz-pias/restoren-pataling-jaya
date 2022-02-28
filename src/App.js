@@ -6,6 +6,9 @@ import Checkout from "./Components/Checkout/Checkout";
 import HomePage from "./Components/Home/HomePage";
 import LogIn from "./Components/Login/LogIn";
 import ProductDetails from "./Components/ProductDetails/ProductDetail/ProductDetails";
+import { Provider } from "react-redux";
+import Store from "./redux/Store";
+
 
 export const ProductsContext = createContext();
 function App() {
@@ -19,7 +22,7 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(0);
   const [addonsPrice, setAddonsPrice] = useState(0);
   const [showCheckout, setShowCheckout] = useState(false);
-  //console.log(totalPrice, addonsPrice, selectedAddons, cartData, remarks, deliveryOption)
+  console.log(totalPrice, addonsPrice)
   return (
     <ProductsContext.Provider
       value={{
@@ -35,22 +38,27 @@ function App() {
         addonPrice: [addonsPrice, setAddonsPrice],
       }}
     >
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route exact path="/login">
-            <LogIn />
-          </Route>
-          <Route exact path="/product">
-            <ProductDetails />
-          </Route>
-          <Route exact path="/checkout">
-            <Checkout />
-          </Route>
-        </Switch>
-      </Router>
+      <Provider store={Store}>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/login">
+              <LogIn />
+            </Route>
+            <Route exact path="/product">
+              <ProductDetails />
+            </Route>
+            <Route exact path="/cart">
+              <CartPage />
+            </Route>
+            <Route exact path="/checkout">
+              <Checkout />
+            </Route>
+          </Switch>
+        </Router>
+      </Provider>
     </ProductsContext.Provider>
   );
 }

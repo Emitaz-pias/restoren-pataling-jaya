@@ -1,11 +1,16 @@
+import { CART_ITEM } from "../actions/types";
+
 const initialState = {
     Cart: [],
-    selectAddon: {},
-    totalPrice: 0,
 };
 
 const CartReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case CART_ITEM:
+            return {
+                ...state,
+                Cart: payload,
+            };
         default:
             return state;
     }
